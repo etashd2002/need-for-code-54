@@ -25,16 +25,16 @@ Partial Class frmMstStaff
         Me.tctrlStaffMst = New System.Windows.Forms.TabControl()
         Me.TabStaffDtl = New System.Windows.Forms.TabPage()
         Me.gboxStaffDtl = New System.Windows.Forms.GroupBox()
-        Me.cmbxPostingAcGroup = New System.Windows.Forms.ComboBox()
-        Me.lblPostingAcGroup = New System.Windows.Forms.Label()
-        Me.txtUnitOfMeasure = New System.Windows.Forms.TextBox()
-        Me.lblUOM = New System.Windows.Forms.Label()
-        Me.txtProductName = New System.Windows.Forms.TextBox()
-        Me.cmbxCategory = New System.Windows.Forms.ComboBox()
-        Me.lblCategory = New System.Windows.Forms.Label()
-        Me.lblName = New System.Windows.Forms.Label()
+        Me.txtStaffName = New System.Windows.Forms.TextBox()
+        Me.cmbxPosition = New System.Windows.Forms.ComboBox()
+        Me.lblPosition = New System.Windows.Forms.Label()
+        Me.lblStaffName = New System.Windows.Forms.Label()
         Me.TabStaffLst = New System.Windows.Forms.TabPage()
         Me.dtgdStaffLst = New System.Windows.Forms.DataGridView()
+        Me.txtContact = New System.Windows.Forms.TextBox()
+        Me.lblContact = New System.Windows.Forms.Label()
+        Me.txtEmail = New System.Windows.Forms.TextBox()
+        Me.lblEmail = New System.Windows.Forms.Label()
         Me.tctrlStaffMst.SuspendLayout()
         Me.TabStaffDtl.SuspendLayout()
         Me.gboxStaffDtl.SuspendLayout()
@@ -65,95 +65,57 @@ Partial Class frmMstStaff
         '
         'gboxStaffDtl
         '
-        Me.gboxStaffDtl.Controls.Add(Me.cmbxPostingAcGroup)
-        Me.gboxStaffDtl.Controls.Add(Me.lblPostingAcGroup)
-        Me.gboxStaffDtl.Controls.Add(Me.txtUnitOfMeasure)
-        Me.gboxStaffDtl.Controls.Add(Me.lblUOM)
-        Me.gboxStaffDtl.Controls.Add(Me.txtProductName)
-        Me.gboxStaffDtl.Controls.Add(Me.cmbxCategory)
-        Me.gboxStaffDtl.Controls.Add(Me.lblCategory)
-        Me.gboxStaffDtl.Controls.Add(Me.lblName)
+        Me.gboxStaffDtl.Controls.Add(Me.txtEmail)
+        Me.gboxStaffDtl.Controls.Add(Me.lblEmail)
+        Me.gboxStaffDtl.Controls.Add(Me.txtContact)
+        Me.gboxStaffDtl.Controls.Add(Me.lblContact)
+        Me.gboxStaffDtl.Controls.Add(Me.txtStaffName)
+        Me.gboxStaffDtl.Controls.Add(Me.cmbxPosition)
+        Me.gboxStaffDtl.Controls.Add(Me.lblPosition)
+        Me.gboxStaffDtl.Controls.Add(Me.lblStaffName)
         Me.gboxStaffDtl.Location = New System.Drawing.Point(170, 79)
         Me.gboxStaffDtl.Name = "gboxStaffDtl"
         Me.gboxStaffDtl.Size = New System.Drawing.Size(853, 427)
         Me.gboxStaffDtl.TabIndex = 30
         Me.gboxStaffDtl.TabStop = False
         '
-        'cmbxPostingAcGroup
+        'txtStaffName
         '
-        Me.cmbxPostingAcGroup.AllowDrop = True
-        Me.cmbxPostingAcGroup.FormattingEnabled = True
-        Me.cmbxPostingAcGroup.Location = New System.Drawing.Point(262, 180)
-        Me.cmbxPostingAcGroup.MaxLength = 100
-        Me.cmbxPostingAcGroup.Name = "cmbxPostingAcGroup"
-        Me.cmbxPostingAcGroup.Size = New System.Drawing.Size(226, 21)
-        Me.cmbxPostingAcGroup.TabIndex = 59
+        Me.txtStaffName.Location = New System.Drawing.Point(262, 113)
+        Me.txtStaffName.MaxLength = 125
+        Me.txtStaffName.Name = "txtStaffName"
+        Me.txtStaffName.Size = New System.Drawing.Size(227, 20)
+        Me.txtStaffName.TabIndex = 52
         '
-        'lblPostingAcGroup
+        'cmbxPosition
         '
-        Me.lblPostingAcGroup.AutoSize = True
-        Me.lblPostingAcGroup.ForeColor = System.Drawing.Color.Sienna
-        Me.lblPostingAcGroup.Location = New System.Drawing.Point(133, 184)
-        Me.lblPostingAcGroup.Name = "lblPostingAcGroup"
-        Me.lblPostingAcGroup.Size = New System.Drawing.Size(123, 13)
-        Me.lblPostingAcGroup.TabIndex = 60
-        Me.lblPostingAcGroup.Text = "Posting Account Group :"
+        Me.cmbxPosition.AllowDrop = True
+        Me.cmbxPosition.FormattingEnabled = True
+        Me.cmbxPosition.Location = New System.Drawing.Point(262, 139)
+        Me.cmbxPosition.MaxLength = 50
+        Me.cmbxPosition.Name = "cmbxPosition"
+        Me.cmbxPosition.Size = New System.Drawing.Size(177, 21)
+        Me.cmbxPosition.TabIndex = 53
         '
-        'txtUnitOfMeasure
+        'lblPosition
         '
-        Me.txtUnitOfMeasure.Location = New System.Drawing.Point(262, 158)
-        Me.txtUnitOfMeasure.MaxLength = 10
-        Me.txtUnitOfMeasure.Name = "txtUnitOfMeasure"
-        Me.txtUnitOfMeasure.Size = New System.Drawing.Size(76, 20)
-        Me.txtUnitOfMeasure.TabIndex = 57
+        Me.lblPosition.AutoSize = True
+        Me.lblPosition.ForeColor = System.Drawing.Color.Sienna
+        Me.lblPosition.Location = New System.Drawing.Point(206, 142)
+        Me.lblPosition.Name = "lblPosition"
+        Me.lblPosition.Size = New System.Drawing.Size(50, 13)
+        Me.lblPosition.TabIndex = 55
+        Me.lblPosition.Text = "Position :"
         '
-        'lblUOM
+        'lblStaffName
         '
-        Me.lblUOM.AutoSize = True
-        Me.lblUOM.ForeColor = System.Drawing.Color.Sienna
-        Me.lblUOM.Location = New System.Drawing.Point(168, 161)
-        Me.lblUOM.Name = "lblUOM"
-        Me.lblUOM.Size = New System.Drawing.Size(88, 13)
-        Me.lblUOM.TabIndex = 58
-        Me.lblUOM.Text = "Unit of Measure :"
-        '
-        'txtProductName
-        '
-        Me.txtProductName.Location = New System.Drawing.Point(262, 113)
-        Me.txtProductName.MaxLength = 125
-        Me.txtProductName.Name = "txtProductName"
-        Me.txtProductName.Size = New System.Drawing.Size(292, 20)
-        Me.txtProductName.TabIndex = 52
-        '
-        'cmbxCategory
-        '
-        Me.cmbxCategory.AllowDrop = True
-        Me.cmbxCategory.FormattingEnabled = True
-        Me.cmbxCategory.Location = New System.Drawing.Point(262, 135)
-        Me.cmbxCategory.MaxLength = 50
-        Me.cmbxCategory.Name = "cmbxCategory"
-        Me.cmbxCategory.Size = New System.Drawing.Size(226, 21)
-        Me.cmbxCategory.TabIndex = 53
-        '
-        'lblCategory
-        '
-        Me.lblCategory.AutoSize = True
-        Me.lblCategory.ForeColor = System.Drawing.Color.Sienna
-        Me.lblCategory.Location = New System.Drawing.Point(201, 139)
-        Me.lblCategory.Name = "lblCategory"
-        Me.lblCategory.Size = New System.Drawing.Size(55, 13)
-        Me.lblCategory.TabIndex = 55
-        Me.lblCategory.Text = "Category :"
-        '
-        'lblName
-        '
-        Me.lblName.AutoSize = True
-        Me.lblName.ForeColor = System.Drawing.Color.Sienna
-        Me.lblName.Location = New System.Drawing.Point(175, 116)
-        Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(81, 13)
-        Me.lblName.TabIndex = 54
-        Me.lblName.Text = "Product Name :"
+        Me.lblStaffName.AutoSize = True
+        Me.lblStaffName.ForeColor = System.Drawing.Color.Sienna
+        Me.lblStaffName.Location = New System.Drawing.Point(190, 116)
+        Me.lblStaffName.Name = "lblStaffName"
+        Me.lblStaffName.Size = New System.Drawing.Size(66, 13)
+        Me.lblStaffName.TabIndex = 54
+        Me.lblStaffName.Text = "Staff Name :"
         '
         'TabStaffLst
         '
@@ -172,6 +134,42 @@ Partial Class frmMstStaff
         Me.dtgdStaffLst.Name = "dtgdStaffLst"
         Me.dtgdStaffLst.Size = New System.Drawing.Size(1190, 565)
         Me.dtgdStaffLst.TabIndex = 0
+        '
+        'txtContact
+        '
+        Me.txtContact.Location = New System.Drawing.Point(262, 166)
+        Me.txtContact.MaxLength = 10
+        Me.txtContact.Name = "txtContact"
+        Me.txtContact.Size = New System.Drawing.Size(177, 20)
+        Me.txtContact.TabIndex = 56
+        '
+        'lblContact
+        '
+        Me.lblContact.AutoSize = True
+        Me.lblContact.ForeColor = System.Drawing.Color.Sienna
+        Me.lblContact.Location = New System.Drawing.Point(206, 169)
+        Me.lblContact.Name = "lblContact"
+        Me.lblContact.Size = New System.Drawing.Size(50, 13)
+        Me.lblContact.TabIndex = 57
+        Me.lblContact.Text = "Contact :"
+        '
+        'txtEmail
+        '
+        Me.txtEmail.Location = New System.Drawing.Point(262, 192)
+        Me.txtEmail.MaxLength = 100
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(177, 20)
+        Me.txtEmail.TabIndex = 58
+        '
+        'lblEmail
+        '
+        Me.lblEmail.AutoSize = True
+        Me.lblEmail.ForeColor = System.Drawing.Color.Sienna
+        Me.lblEmail.Location = New System.Drawing.Point(218, 195)
+        Me.lblEmail.Name = "lblEmail"
+        Me.lblEmail.Size = New System.Drawing.Size(38, 13)
+        Me.lblEmail.TabIndex = 59
+        Me.lblEmail.Text = "Email :"
         '
         'frmMstStaff
         '
@@ -194,14 +192,14 @@ Partial Class frmMstStaff
     Friend WithEvents tctrlStaffMst As TabControl
     Friend WithEvents TabStaffDtl As TabPage
     Friend WithEvents gboxStaffDtl As GroupBox
-    Friend WithEvents cmbxPostingAcGroup As ComboBox
-    Friend WithEvents lblPostingAcGroup As Label
-    Friend WithEvents txtUnitOfMeasure As TextBox
-    Friend WithEvents lblUOM As Label
-    Friend WithEvents txtProductName As TextBox
-    Friend WithEvents cmbxCategory As ComboBox
-    Friend WithEvents lblCategory As Label
-    Friend WithEvents lblName As Label
+    Friend WithEvents txtStaffName As TextBox
+    Friend WithEvents cmbxPosition As ComboBox
+    Friend WithEvents lblPosition As Label
+    Friend WithEvents lblStaffName As Label
     Friend WithEvents TabStaffLst As TabPage
     Friend WithEvents dtgdStaffLst As DataGridView
+    Friend WithEvents txtContact As TextBox
+    Friend WithEvents lblContact As Label
+    Friend WithEvents txtEmail As TextBox
+    Friend WithEvents lblEmail As Label
 End Class

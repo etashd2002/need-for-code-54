@@ -41,7 +41,7 @@
             pgState = "U"
             enformMode = GlobalVariables.FormMode.fmEditData
         Else
-            MessageBox.Show("Select a Product to Edit by double clicking on Row ...")
+            MessageBox.Show("Select a Staff to Edit by double clicking on Row ...")
         End If
     End Sub
 
@@ -53,7 +53,7 @@
         'SQLControl.GetUserRights(intMenuFormId, GlobalVariables.UserCode, False)
         'gboxProductDtl.Enabled = True
         If dtgdStaffLst.CurrentRow Is Nothing Then
-            MessageBox.Show("Please select a Product to Delete ...")
+            MessageBox.Show("Please select a Staff to Delete ...")
             Exit Sub
         End If
         pgState = "D"
@@ -68,42 +68,35 @@
     End Sub
 
     Private Sub FillBlanks()
-        txtProductName.Text = ""
-        txtUnitOfMeasure.Text = ""
-        cmbxCategory.SelectedIndex = -1
-        cmbxPostingAcGroup.Text = ""
-        cmbxPostingAcGroup.ResetText()
-        cmbxCategory.ResetText()
+        txtStaffName.Text = ""
+        txtContact.Text = ""
+        txtEmail.Text = ""
+        cmbxPosition.SelectedIndex = -1
+        cmbxPosition.ResetText()
     End Sub
 
     Private Sub FillCombos()
         Dim cnComboDate As New SQLControl
-        cnComboDate.ExecQuery("Select CategoryId,CategoryName from MstCategory Order by CategoryName;")
+        cnComboDate.ExecQuery("Select position from staff Order by position;")
         If cnComboDate.HasException = True Then Exit Sub
         If cnComboDate.RecordCount > 0 Then
-            cmbxCategory.DisplayMember = "CategoryName"
-            cmbxCategory.ValueMember = "CategoryId"
-            cmbxCategory.DataSource = cnComboDate.DBDT
-        End If
-        cnComboDate.ExecQuery("Select Distinct ProdPostingAcGroup as PostAcGroup from MstProduct Order by ProdPostingAcGroup")
-        If cnComboDate.HasException = True Then Exit Sub
-        If cnComboDate.RecordCount > 0 Then
-            cmbxPostingAcGroup.DisplayMember = "PostAcGroup"
-            cmbxPostingAcGroup.DataSource = cnComboDate.DBDT
+            cmbxPosition.DisplayMember = "position"
+            cmbxPosition.ValueMember = "position"
+            cmbxPosition.DataSource = cnComboDate.DBDT
         End If
         cnComboDate = Nothing
     End Sub
 
     Private Sub FillDetails()
         Dim cnGetData As New SQLControl
-        cnGetData.AddParam("@in_Listtype", "D")
-        cnGetData.AddParam("@in_ProductId", intKeyStaffId)
-        cnGetData.ExecProcedure("RSS_ProductGet")
+        cnGetData.AddParam("@in_StaffId", intKeyStaffId)
+        cnGetData.ExecProcedure("StaffGet")
+        If cnGetData.HasException = True Then Exit Sub
         If cnGetData.DBDT.Rows.Count > 0 Then
-            txtProductName.Text = cnGetData.DBDT.Rows(0)("ProductName").ToString
-            cmbxCategory.SelectedValue = cnGetData.DBDT.Rows(0)("ProdCategoryId")
-            cmbxPostingAcGroup.SelectedText = cnGetData.DBDT.Rows(0)("ProdPostingAcGroup").ToString
-            txtUnitOfMeasure.Text = cnGetData.DBDT.Rows(0)("ProdUOM").ToString
+            txtStaffName.Text = cnGetData.DBDT.Rows(0)("Staff_Name").ToString
+            cmbxPosition.SelectedValue = cnGetData.DBDT.Rows(0)("position").ToString
+            txtContact.Text = cnGetData.DBDT.Rows(0)("staff_contact").ToString
+            txtEmail.Text = cnGetData.DBDT.Rows(0)("staff_email").ToString
         End If
         cnGetData = Nothing
     End Sub
@@ -129,18 +122,17 @@
     Public Sub SaveData()
         enformMode = GlobalVariables.FormMode.fmSaveData
         Dim intErrCode As Integer
-        Dim strErrMsg As String = ""
+        Dim strErrMsg As String
         Try
             cnData.AddParam("@in_SaveType", pgState)     ' SqlDbType.NVarChar, 1, ParameterDirection.Input,
             If pgState = "U" Or pgState = "D" Then
-                cnData.AddParam("@in_ProductId", intKeyStaffId)
+                cnData.AddParam("@in_StaffId", intKeyStaffId)
             End If
-            cnData.AddParam("@in_ProductName", txtProductName.Text)       ' SqlDbType.NVarChar, 150, ParameterDirection.Input,
-            cnData.AddParam("@in_ProdCategoryId", cmbxCategory.SelectedValue)
-            cnData.AddParam("@in_ProdUOM", txtUnitOfMeasure.Text)
-            cnData.AddParam("@in_ProdPostingAcGroup", cmbxPostingAcGroup.Text)
-            cnData.AddParam("@in_UserCode", GlobalVariables.UserCode)     ' SqlDbType.NVarChar, 5, ParameterDirection.Input,
-            cnData.ExecProcedure("RSS_ProductAUD")
+            cnData.AddParam("@in_StaffName", txtStaffName.Text)       ' SqlDbType.NVarChar, 150, ParameterDirection.Input,
+            cnData.AddParam("@in_Position", cmbxPosition.Text)
+            cnData.AddParam("@in_Contact", txtContact.Text)
+            cnData.AddParam("@in_Email", txtEmail.Text)
+            cnData.ExecProcedure("Staff_AUD")
             intErrCode = cnData.intCtrlErrCode
             strErrMsg = cnData.strCtrlErrMsg
             If cnData.HasException = True Then
@@ -167,8 +159,8 @@
     End Sub
 
     Private Sub tctrlProductMst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tctrlStaffMst.SelectedIndexChanged
-        If tctrlStaffMst.SelectedTab.Name = "TabProductLst" Then
-            cnData.ExecQuery("Select MstProduct.*,CategoryName,'  ' as Blank from MstProduct INNER JOIN MstCategory ON ProdCategoryId = CategoryId Order by ProductName;")
+        If tctrlStaffMst.SelectedTab.Name = "TabStaffLst" Then
+            cnData.ExecQuery("Select * from staff Order by staff_name;")
             If cnData.HasException = True Then Exit Sub
 
             dtgdStaffLst.DataSource = cnData.DBDT
@@ -177,36 +169,14 @@
                 .DefaultCellStyle.BackColor = Color.AliceBlue
                 .AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
 
-                .Columns(0).HeaderText = ""
-                .Columns(1).HeaderText = "Name"
-                .Columns(2).HeaderText = "ProdCategoryId"
-                .Columns(3).HeaderText = "UOM"
-                .Columns(4).HeaderText = "Posting Ac. Group"
-                .Columns(5).HeaderText = "Maintain Item Stock"
-                .Columns(6).HeaderText = "Sale Qty Editable"
-                .Columns(7).HeaderText = "Sale Rate Editable"
-                .Columns(8).HeaderText = "Disabled"
-                .Columns(13).HeaderText = "Category"
-                .Columns(14).HeaderText = "  "
+                .Columns(0).HeaderText = "staff_id"
+                .Columns(1).HeaderText = "staff_name"
                 .Columns(0).Visible = False
                 .Columns(1).Width = 200
-                .Columns(3).Width = 100
-                .Columns(4).Width = 100
-                .Columns(5).Width = 200
-                .Columns(6).Width = 100
-                .Columns(7).Width = 100
-                .Columns(8).Width = 100
-                .Columns(13).Width = 100
-                .Columns(14).Width = 100
-                .Columns(2).Visible = False
-                .Columns(9).Visible = False
-                .Columns(10).Visible = False
-                .Columns(11).Visible = False
-                .Columns(12).Visible = False
                 .ReadOnly = True
             End With
             '            cnData = Nothing
-        ElseIf tctrlStaffMst.SelectedTab.Name = "TabProductDtl" Then
+        ElseIf tctrlStaffMst.SelectedTab.Name = "TabStaffDtl" Then
             '            If dtgdProductLst.SelectedRows.Count <> 0 Then
             If intKeyStaffId <> 0 Then
                 FillDetails()
@@ -217,7 +187,7 @@
     Private Sub dtgdProductLst_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtgdStaffLst.CellMouseDoubleClick
         If e.RowIndex >= 0 And e.ColumnIndex > 0 Then
             Dim intSelectedRow = dtgdStaffLst.Rows(e.RowIndex)
-            intKeyStaffId = dtgdStaffLst.Rows(e.RowIndex).Cells("ProductId").Value.ToString
+            intKeyStaffId = dtgdStaffLst.Rows(e.RowIndex).Cells("staff_Id").Value.ToString
             tctrlStaffMst.SelectedTab = TabStaffDtl
         End If
     End Sub
@@ -227,6 +197,14 @@
     End Sub
     Public Sub PreviewData()
         'frmReportPage.ShowRepo("rptProductLst.rpt",, True)
+    End Sub
+
+    Private Sub txtContact_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtContact.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
     End Sub
 
     'Private Sub frmMstProduct_Activated(sender As Object, e As EventArgs) Handles Me.Activated
