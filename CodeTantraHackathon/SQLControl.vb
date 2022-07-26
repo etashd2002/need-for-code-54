@@ -112,9 +112,6 @@ Public Class SQLControl
 
             ' LOAD PARAMS INTO DB COMMAND
             Params.ForEach(Sub(p) DBCmd.Parameters.Add(p))
-            If SPName = "SIA_TrnPurchaseAUD" Or SPName = "SIA_TrnProductionAUD" Or SPName = "SIA_TrnDeliveryAUD" Then
-                DBCmd.Parameters.Add("@out_EntryNo", SqlDbType.Int, 6).Direction = ParameterDirection.Output
-            End If
             DBCmd.Parameters.Add("@out_ErrCode", SqlDbType.Int, 6).Direction = ParameterDirection.Output
             DBCmd.Parameters.Add("@out_ErrMsg", SqlDbType.NVarChar, 250).Direction = ParameterDirection.Output
             ' CLEAR PARAM LIST

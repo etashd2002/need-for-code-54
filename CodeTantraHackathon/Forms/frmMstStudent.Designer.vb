@@ -22,9 +22,11 @@ Partial Class frmMstStudent
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.tctrlProductMst = New System.Windows.Forms.TabControl()
-        Me.TabProductDtl = New System.Windows.Forms.TabPage()
-        Me.gboxProductDtl = New System.Windows.Forms.GroupBox()
+        Me.tctrlStudentMst = New System.Windows.Forms.TabControl()
+        Me.TabStudentDtl = New System.Windows.Forms.TabPage()
+        Me.gboxStudentDtl = New System.Windows.Forms.GroupBox()
+        Me.txtStudentAddress = New System.Windows.Forms.TextBox()
+        Me.lblStudentAddress = New System.Windows.Forms.Label()
         Me.dtpStudentDOB = New System.Windows.Forms.DateTimePicker()
         Me.lblStudentDOB = New System.Windows.Forms.Label()
         Me.cmbxStudentYear = New System.Windows.Forms.ComboBox()
@@ -37,69 +39,86 @@ Partial Class frmMstStudent
         Me.lblStudentEmail = New System.Windows.Forms.Label()
         Me.cmbxStudentClass = New System.Windows.Forms.ComboBox()
         Me.lblStudentClass = New System.Windows.Forms.Label()
-        Me.chkDisabled = New System.Windows.Forms.CheckBox()
         Me.txtStudentCode = New System.Windows.Forms.TextBox()
         Me.lblStudentCode = New System.Windows.Forms.Label()
         Me.txtStudentName = New System.Windows.Forms.TextBox()
         Me.lblName = New System.Windows.Forms.Label()
-        Me.TabProductLst = New System.Windows.Forms.TabPage()
-        Me.dtgdProductLst = New System.Windows.Forms.DataGridView()
-        Me.txtStudentAddress = New System.Windows.Forms.TextBox()
-        Me.lblStudentAddress = New System.Windows.Forms.Label()
-        Me.tctrlProductMst.SuspendLayout()
-        Me.TabProductDtl.SuspendLayout()
-        Me.gboxProductDtl.SuspendLayout()
-        Me.TabProductLst.SuspendLayout()
-        CType(Me.dtgdProductLst, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabStudentLst = New System.Windows.Forms.TabPage()
+        Me.dtgdStudentLst = New System.Windows.Forms.DataGridView()
+        Me.tctrlStudentMst.SuspendLayout()
+        Me.TabStudentDtl.SuspendLayout()
+        Me.gboxStudentDtl.SuspendLayout()
+        Me.TabStudentLst.SuspendLayout()
+        CType(Me.dtgdStudentLst, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'tctrlProductMst
+        'tctrlStudentMst
         '
-        Me.tctrlProductMst.Controls.Add(Me.TabProductDtl)
-        Me.tctrlProductMst.Controls.Add(Me.TabProductLst)
-        Me.tctrlProductMst.Location = New System.Drawing.Point(12, 12)
-        Me.tctrlProductMst.Name = "tctrlProductMst"
-        Me.tctrlProductMst.SelectedIndex = 0
-        Me.tctrlProductMst.Size = New System.Drawing.Size(1210, 604)
-        Me.tctrlProductMst.TabIndex = 3
+        Me.tctrlStudentMst.Controls.Add(Me.TabStudentDtl)
+        Me.tctrlStudentMst.Controls.Add(Me.TabStudentLst)
+        Me.tctrlStudentMst.Location = New System.Drawing.Point(12, 12)
+        Me.tctrlStudentMst.Name = "tctrlStudentMst"
+        Me.tctrlStudentMst.SelectedIndex = 0
+        Me.tctrlStudentMst.Size = New System.Drawing.Size(1210, 604)
+        Me.tctrlStudentMst.TabIndex = 3
         '
-        'TabProductDtl
+        'TabStudentDtl
         '
-        Me.TabProductDtl.BackColor = System.Drawing.Color.LemonChiffon
-        Me.TabProductDtl.Controls.Add(Me.gboxProductDtl)
-        Me.TabProductDtl.Location = New System.Drawing.Point(4, 22)
-        Me.TabProductDtl.Name = "TabProductDtl"
-        Me.TabProductDtl.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabProductDtl.Size = New System.Drawing.Size(1202, 578)
-        Me.TabProductDtl.TabIndex = 0
-        Me.TabProductDtl.Text = "Add/Update/Delete"
+        Me.TabStudentDtl.BackColor = System.Drawing.Color.LemonChiffon
+        Me.TabStudentDtl.Controls.Add(Me.gboxStudentDtl)
+        Me.TabStudentDtl.Location = New System.Drawing.Point(4, 22)
+        Me.TabStudentDtl.Name = "TabStudentDtl"
+        Me.TabStudentDtl.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabStudentDtl.Size = New System.Drawing.Size(1202, 578)
+        Me.TabStudentDtl.TabIndex = 0
+        Me.TabStudentDtl.Text = "Add/Update/Delete"
         '
-        'gboxProductDtl
+        'gboxStudentDtl
         '
-        Me.gboxProductDtl.Controls.Add(Me.txtStudentAddress)
-        Me.gboxProductDtl.Controls.Add(Me.lblStudentAddress)
-        Me.gboxProductDtl.Controls.Add(Me.dtpStudentDOB)
-        Me.gboxProductDtl.Controls.Add(Me.lblStudentDOB)
-        Me.gboxProductDtl.Controls.Add(Me.cmbxStudentYear)
-        Me.gboxProductDtl.Controls.Add(Me.lblStudentYear)
-        Me.gboxProductDtl.Controls.Add(Me.txtParentContactNo)
-        Me.gboxProductDtl.Controls.Add(Me.lblParentContactNo)
-        Me.gboxProductDtl.Controls.Add(Me.txtStudentContactNo)
-        Me.gboxProductDtl.Controls.Add(Me.lblStudentContactNo)
-        Me.gboxProductDtl.Controls.Add(Me.txtStudentEmail)
-        Me.gboxProductDtl.Controls.Add(Me.lblStudentEmail)
-        Me.gboxProductDtl.Controls.Add(Me.cmbxStudentClass)
-        Me.gboxProductDtl.Controls.Add(Me.lblStudentClass)
-        Me.gboxProductDtl.Controls.Add(Me.chkDisabled)
-        Me.gboxProductDtl.Controls.Add(Me.txtStudentCode)
-        Me.gboxProductDtl.Controls.Add(Me.lblStudentCode)
-        Me.gboxProductDtl.Controls.Add(Me.txtStudentName)
-        Me.gboxProductDtl.Controls.Add(Me.lblName)
-        Me.gboxProductDtl.Location = New System.Drawing.Point(170, 79)
-        Me.gboxProductDtl.Name = "gboxProductDtl"
-        Me.gboxProductDtl.Size = New System.Drawing.Size(853, 427)
-        Me.gboxProductDtl.TabIndex = 30
-        Me.gboxProductDtl.TabStop = False
+        Me.gboxStudentDtl.BackColor = System.Drawing.Color.Wheat
+        Me.gboxStudentDtl.Controls.Add(Me.txtStudentAddress)
+        Me.gboxStudentDtl.Controls.Add(Me.lblStudentAddress)
+        Me.gboxStudentDtl.Controls.Add(Me.dtpStudentDOB)
+        Me.gboxStudentDtl.Controls.Add(Me.lblStudentDOB)
+        Me.gboxStudentDtl.Controls.Add(Me.cmbxStudentYear)
+        Me.gboxStudentDtl.Controls.Add(Me.lblStudentYear)
+        Me.gboxStudentDtl.Controls.Add(Me.txtParentContactNo)
+        Me.gboxStudentDtl.Controls.Add(Me.lblParentContactNo)
+        Me.gboxStudentDtl.Controls.Add(Me.txtStudentContactNo)
+        Me.gboxStudentDtl.Controls.Add(Me.lblStudentContactNo)
+        Me.gboxStudentDtl.Controls.Add(Me.txtStudentEmail)
+        Me.gboxStudentDtl.Controls.Add(Me.lblStudentEmail)
+        Me.gboxStudentDtl.Controls.Add(Me.cmbxStudentClass)
+        Me.gboxStudentDtl.Controls.Add(Me.lblStudentClass)
+        Me.gboxStudentDtl.Controls.Add(Me.txtStudentCode)
+        Me.gboxStudentDtl.Controls.Add(Me.lblStudentCode)
+        Me.gboxStudentDtl.Controls.Add(Me.txtStudentName)
+        Me.gboxStudentDtl.Controls.Add(Me.lblName)
+        Me.gboxStudentDtl.Location = New System.Drawing.Point(170, 79)
+        Me.gboxStudentDtl.Name = "gboxStudentDtl"
+        Me.gboxStudentDtl.Size = New System.Drawing.Size(853, 427)
+        Me.gboxStudentDtl.TabIndex = 30
+        Me.gboxStudentDtl.TabStop = False
+        '
+        'txtStudentAddress
+        '
+        Me.txtStudentAddress.Location = New System.Drawing.Point(244, 275)
+        Me.txtStudentAddress.MaxLength = 4000
+        Me.txtStudentAddress.Multiline = True
+        Me.txtStudentAddress.Name = "txtStudentAddress"
+        Me.txtStudentAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtStudentAddress.Size = New System.Drawing.Size(292, 58)
+        Me.txtStudentAddress.TabIndex = 81
+        '
+        'lblStudentAddress
+        '
+        Me.lblStudentAddress.AutoSize = True
+        Me.lblStudentAddress.ForeColor = System.Drawing.Color.Sienna
+        Me.lblStudentAddress.Location = New System.Drawing.Point(147, 278)
+        Me.lblStudentAddress.Name = "lblStudentAddress"
+        Me.lblStudentAddress.Size = New System.Drawing.Size(91, 13)
+        Me.lblStudentAddress.TabIndex = 82
+        Me.lblStudentAddress.Text = "Student Address :"
         '
         'dtpStudentDOB
         '
@@ -214,17 +233,6 @@ Partial Class frmMstStudent
         Me.lblStudentClass.TabIndex = 69
         Me.lblStudentClass.Text = "Student Class :"
         '
-        'chkDisabled
-        '
-        Me.chkDisabled.AutoSize = True
-        Me.chkDisabled.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.chkDisabled.Location = New System.Drawing.Point(728, 19)
-        Me.chkDisabled.Name = "chkDisabled"
-        Me.chkDisabled.Size = New System.Drawing.Size(101, 17)
-        Me.chkDisabled.TabIndex = 67
-        Me.chkDisabled.Text = "Disable Student"
-        Me.chkDisabled.UseVisualStyleBackColor = True
-        '
         'txtStudentCode
         '
         Me.txtStudentCode.Location = New System.Drawing.Point(244, 91)
@@ -261,72 +269,51 @@ Partial Class frmMstStudent
         Me.lblName.TabIndex = 54
         Me.lblName.Text = "Student Name :"
         '
-        'TabProductLst
+        'TabStudentLst
         '
-        Me.TabProductLst.BackColor = System.Drawing.Color.MistyRose
-        Me.TabProductLst.Controls.Add(Me.dtgdProductLst)
-        Me.TabProductLst.Location = New System.Drawing.Point(4, 22)
-        Me.TabProductLst.Name = "TabProductLst"
-        Me.TabProductLst.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabProductLst.Size = New System.Drawing.Size(1202, 578)
-        Me.TabProductLst.TabIndex = 1
-        Me.TabProductLst.Text = "List"
+        Me.TabStudentLst.BackColor = System.Drawing.Color.MistyRose
+        Me.TabStudentLst.Controls.Add(Me.dtgdStudentLst)
+        Me.TabStudentLst.Location = New System.Drawing.Point(4, 22)
+        Me.TabStudentLst.Name = "TabStudentLst"
+        Me.TabStudentLst.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabStudentLst.Size = New System.Drawing.Size(1202, 578)
+        Me.TabStudentLst.TabIndex = 1
+        Me.TabStudentLst.Text = "List"
         '
-        'dtgdProductLst
+        'dtgdStudentLst
         '
-        Me.dtgdProductLst.Location = New System.Drawing.Point(6, 7)
-        Me.dtgdProductLst.Name = "dtgdProductLst"
-        Me.dtgdProductLst.Size = New System.Drawing.Size(1190, 565)
-        Me.dtgdProductLst.TabIndex = 0
-        '
-        'txtStudentAddress
-        '
-        Me.txtStudentAddress.Location = New System.Drawing.Point(244, 275)
-        Me.txtStudentAddress.MaxLength = 4000
-        Me.txtStudentAddress.Multiline = True
-        Me.txtStudentAddress.Name = "txtStudentAddress"
-        Me.txtStudentAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtStudentAddress.Size = New System.Drawing.Size(292, 58)
-        Me.txtStudentAddress.TabIndex = 81
-        '
-        'lblStudentAddress
-        '
-        Me.lblStudentAddress.AutoSize = True
-        Me.lblStudentAddress.ForeColor = System.Drawing.Color.Sienna
-        Me.lblStudentAddress.Location = New System.Drawing.Point(147, 278)
-        Me.lblStudentAddress.Name = "lblStudentAddress"
-        Me.lblStudentAddress.Size = New System.Drawing.Size(91, 13)
-        Me.lblStudentAddress.TabIndex = 82
-        Me.lblStudentAddress.Text = "Student Address :"
+        Me.dtgdStudentLst.Location = New System.Drawing.Point(6, 7)
+        Me.dtgdStudentLst.Name = "dtgdStudentLst"
+        Me.dtgdStudentLst.Size = New System.Drawing.Size(1190, 565)
+        Me.dtgdStudentLst.TabIndex = 0
         '
         'frmMstStudent
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1234, 628)
-        Me.Controls.Add(Me.tctrlProductMst)
+        Me.Controls.Add(Me.tctrlStudentMst)
         Me.Name = "frmMstStudent"
         Me.Text = "Students"
-        Me.tctrlProductMst.ResumeLayout(False)
-        Me.TabProductDtl.ResumeLayout(False)
-        Me.gboxProductDtl.ResumeLayout(False)
-        Me.gboxProductDtl.PerformLayout()
-        Me.TabProductLst.ResumeLayout(False)
-        CType(Me.dtgdProductLst, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tctrlStudentMst.ResumeLayout(False)
+        Me.TabStudentDtl.ResumeLayout(False)
+        Me.gboxStudentDtl.ResumeLayout(False)
+        Me.gboxStudentDtl.PerformLayout()
+        Me.TabStudentLst.ResumeLayout(False)
+        CType(Me.dtgdStudentLst, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents tctrlProductMst As TabControl
-    Friend WithEvents TabProductDtl As TabPage
-    Friend WithEvents gboxProductDtl As GroupBox
-    Friend WithEvents chkDisabled As CheckBox
+    Friend WithEvents tctrlStudentMst As TabControl
+    Friend WithEvents TabStudentDtl As TabPage
+    Friend WithEvents gboxStudentDtl As GroupBox
     Friend WithEvents txtStudentCode As TextBox
     Friend WithEvents lblStudentCode As Label
     Friend WithEvents txtStudentName As TextBox
     Friend WithEvents lblName As Label
-    Friend WithEvents TabProductLst As TabPage
-    Friend WithEvents dtgdProductLst As DataGridView
+    Friend WithEvents TabStudentLst As TabPage
+    Friend WithEvents dtgdStudentLst As DataGridView
     Friend WithEvents dtpStudentDOB As DateTimePicker
     Friend WithEvents lblStudentDOB As Label
     Friend WithEvents cmbxStudentYear As ComboBox
