@@ -47,8 +47,8 @@
                     DirectCast(ActiveMdiChild, frmMstSubject).AddData()
                 ElseIf ActiveMdiChild.Name = "frmMstStaff" Then
                     DirectCast(ActiveMdiChild, frmMstStaff).AddData()
-                    'ElseIf ActiveMdiChild.Name = "frmMstEmployee" Then
-                    '    DirectCast(ActiveMdiChild, frmMstEmployee).AddData()
+                ElseIf ActiveMdiChild.Name = "frmTrnResultEntry" Then
+                    DirectCast(ActiveMdiChild, frmTrnResultEntry).AddData()
                     'ElseIf ActiveMdiChild.Name = "frmTrnPurchase" Then
                     '    DirectCast(ActiveMdiChild, frmTrnPurchase).AddData()
                     'ElseIf ActiveMdiChild.Name = "frmTrnReceipt" Then
@@ -67,8 +67,8 @@
                     DirectCast(ActiveMdiChild, frmMstSubject).EditData()
                 ElseIf ActiveMdiChild.Name = "frmMstStaff" Then
                     DirectCast(ActiveMdiChild, frmMstStaff).EditData()
-                    'ElseIf ActiveMdiChild.Name = "frmMstEmployee" Then
-                    '    DirectCast(ActiveMdiChild, frmMstEmployee).EditData()
+                ElseIf ActiveMdiChild.Name = "frmTrnResultEntry" Then
+                    DirectCast(ActiveMdiChild, frmTrnResultEntry).EditData()
                     'ElseIf ActiveMdiChild.Name = "frmTrnPurchase" Then
                     '    DirectCast(ActiveMdiChild, frmTrnPurchase).EditData()
                     'ElseIf ActiveMdiChild.Name = "frmTrnReceipt" Then
@@ -87,8 +87,8 @@
                     DirectCast(ActiveMdiChild, frmMstSubject).SaveData()
                 ElseIf ActiveMdiChild.Name = "frmMstStaff" Then
                     DirectCast(ActiveMdiChild, frmMstStaff).SaveData()
-                    'ElseIf ActiveMdiChild.Name = "frmMstEmployee" Then
-                    '    DirectCast(ActiveMdiChild, frmMstEmployee).SaveData()
+                ElseIf ActiveMdiChild.Name = "frmTrnResultEntry" Then
+                    DirectCast(ActiveMdiChild, frmTrnResultEntry).SaveData()
                     'ElseIf ActiveMdiChild.Name = "frmTrnPurchase" Then
                     '    DirectCast(ActiveMdiChild, frmTrnPurchase).SaveData()
                     'ElseIf ActiveMdiChild.Name = "frmTrnReceipt" Then
@@ -107,8 +107,8 @@
                     DirectCast(ActiveMdiChild, frmMstSubject).CancelData()
                 ElseIf ActiveMdiChild.Name = "frmMstStaff" Then
                     DirectCast(ActiveMdiChild, frmMstStaff).CancelData()
-                    'ElseIf ActiveMdiChild.Name = "frmMstEmployee" Then
-                    '    DirectCast(ActiveMdiChild, frmMstEmployee).CancelData()
+                ElseIf ActiveMdiChild.Name = "frmTrnResultEntry" Then
+                    DirectCast(ActiveMdiChild, frmTrnResultEntry).CancelData()
                     'ElseIf ActiveMdiChild.Name = "frmTrnPurchase" Then
                     '    DirectCast(ActiveMdiChild, frmTrnPurchase).CancelData()
                     'ElseIf ActiveMdiChild.Name = "frmTrnReceipt" Then
@@ -127,8 +127,8 @@
                     DirectCast(ActiveMdiChild, frmMstSubject).DeleteData()
                 ElseIf ActiveMdiChild.Name = "frmMstStaff" Then
                     DirectCast(ActiveMdiChild, frmMstStaff).DeleteData()
-                    'ElseIf ActiveMdiChild.Name = "frmMstEmployee" Then
-                    '    DirectCast(ActiveMdiChild, frmMstEmployee).DeleteData()
+                ElseIf ActiveMdiChild.Name = "frmTrnResultEntry" Then
+                    DirectCast(ActiveMdiChild, frmTrnResultEntry).DeleteData()
                     'ElseIf ActiveMdiChild.Name = "frmTrnPurchase" Then
                     '    DirectCast(ActiveMdiChild, frmTrnPurchase).DeleteData()
                     'ElseIf ActiveMdiChild.Name = "frmTrnReceipt" Then
@@ -149,8 +149,8 @@
                     DirectCast(ActiveMdiChild, frmMstSubject).CloseData()
                 ElseIf ActiveMdiChild.Name = "frmMstStaff" Then
                     DirectCast(ActiveMdiChild, frmMstStaff).CloseData()
-                    'ElseIf ActiveMdiChild.Name = "frmMstEmployee" Then
-                    '    DirectCast(ActiveMdiChild, frmMstEmployee).CloseData()
+                ElseIf ActiveMdiChild.Name = "frmTrnResultEntry" Then
+                    DirectCast(ActiveMdiChild, frmTrnResultEntry).CloseData()
                     'ElseIf ActiveMdiChild.Name = "frmTrnPurchase" Then
                     '    DirectCast(ActiveMdiChild, frmTrnPurchase).CloseData()
                     'ElseIf ActiveMdiChild.Name = "frmTrnReceipt" Then
@@ -175,7 +175,7 @@
     '    Dim objMstDebtor As New frmMstDebtor
     '    objMstDebtor.MdiParent = Me
     '    m_ChildFormNumber += 1
-    '    objMstDebtor.intMenuFormId = SQLControl.GetMenuFormId("mnuMstDebtor", "frmMstDebtor")
+    '    objMstDebtor.intMenuFormId = SQLControl.GetMenuFormId("mnuMstDebtor"e, "frmMstDebtor")
     '    objMstDebtor.strEntryType = "D"
     '    objMstDebtor.Show()
     'End Sub
