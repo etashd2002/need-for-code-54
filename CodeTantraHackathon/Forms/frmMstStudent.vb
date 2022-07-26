@@ -70,31 +70,32 @@
     End Sub
 
     Private Sub FillBlanks()
-        txtProductName.Text = ""
-        txtUnitOfMeasure.Text = ""
-        cmbxCategory.SelectedIndex = -1
-        cmbxPostingAcGroup.Text = ""
-        cmbxPostingAcGroup.ResetText()
-        cmbxCategory.ResetText()
+        txtStudentName.Text = ""
+        txtStudentCode.Text = ""
+        cmbxStudentYear.SelectedIndex = -1
+        cmbxStudentYear.Text = ""
+        cmbxStudentClass.SelectedIndex = -1
+        cmbxStudentClass.Text = ""
         chkDisabled.Checked = False
     End Sub
 
     Private Sub FillCombos()
-        Dim cnComboDate As New SQLControl
-        cnComboDate.ExecQuery("Select CategoryId,CategoryName from MstCategory Order by CategoryName;")
-        If cnComboDate.HasException = True Then Exit Sub
-        If cnComboDate.RecordCount > 0 Then
-            cmbxCategory.DisplayMember = "CategoryName"
-            cmbxCategory.ValueMember = "CategoryId"
-            cmbxCategory.DataSource = cnComboDate.DBDT
+        Dim cnComboData As New SQLControl
+        cnComboData.ExecQuery("Select Distinct StudentClass from Performance Order by StudentClass;")
+        If cnComboData.HasException = True Then Exit Sub
+        If cnComboData.RecordCount > 0 Then
+            cmbxStudentClass.DisplayMember = "StudentClass"
+            cmbxStudentClass.ValueMember = "StudentClass"
+            cmbxStudentClass.DataSource = cnComboData.DBDT
         End If
-        cnComboDate.ExecQuery("Select Distinct ProdPostingAcGroup as PostAcGroup from MstProduct Order by ProdPostingAcGroup")
-        If cnComboDate.HasException = True Then Exit Sub
-        If cnComboDate.RecordCount > 0 Then
-            cmbxPostingAcGroup.DisplayMember = "PostAcGroup"
-            cmbxPostingAcGroup.DataSource = cnComboDate.DBDT
+        cnComboData.ExecQuery("Select Distinct StudentYear from Performance Order by StudentYear")
+        If cnComboData.HasException = True Then Exit Sub
+        If cnComboData.RecordCount > 0 Then
+            cmbxStudentYear.DisplayMember = "StudentYear"
+            cmbxStudentYear.ValueMember = "StudentYear"
+            cmbxStudentYear.DataSource = cnComboData.DBDT
         End If
-        cnComboDate = Nothing
+        cnComboData = Nothing
     End Sub
 
     Private Sub FillDetails()
@@ -103,10 +104,8 @@
         cnGetData.AddParam("@in_ProductId", intKeyStudentId)
         cnGetData.ExecProcedure("RSS_ProductGet")
         If cnGetData.DBDT.Rows.Count > 0 Then
-            txtProductName.Text = cnGetData.DBDT.Rows(0)("ProductName").ToString
-            cmbxCategory.SelectedValue = cnGetData.DBDT.Rows(0)("ProdCategoryId")
-            cmbxPostingAcGroup.SelectedText = cnGetData.DBDT.Rows(0)("ProdPostingAcGroup").ToString
-            txtUnitOfMeasure.Text = cnGetData.DBDT.Rows(0)("ProdUOM").ToString
+            txtStudentName.Text = cnGetData.DBDT.Rows(0)("ProductName").ToString
+            txtStudentCode.Text = cnGetData.DBDT.Rows(0)("ProdUOM").ToString
             chkDisabled.Checked = cnGetData.DBDT.Rows(0)("ProdDisabled").ToString
         End If
         cnGetData = Nothing
@@ -139,10 +138,8 @@
             If pgState = "U" Or pgState = "D" Then
                 cnData.AddParam("@in_ProductId", intKeyStudentId)
             End If
-            cnData.AddParam("@in_ProductName", txtProductName.Text)       ' SqlDbType.NVarChar, 150, ParameterDirection.Input,
-            cnData.AddParam("@in_ProdCategoryId", cmbxCategory.SelectedValue)
-            cnData.AddParam("@in_ProdUOM", txtUnitOfMeasure.Text)
-            cnData.AddParam("@in_ProdPostingAcGroup", cmbxPostingAcGroup.Text)
+            cnData.AddParam("@in_ProductName", txtStudentName.Text)       ' SqlDbType.NVarChar, 150, ParameterDirection.Input,
+            cnData.AddParam("@in_ProdUOM", txtStudentCode.Text)
             cnData.AddParam("@in_UserCode", GlobalVariables.UserCode)     ' SqlDbType.NVarChar, 5, ParameterDirection.Input,
             cnData.ExecProcedure("RSS_ProductAUD")
             intErrCode = cnData.intCtrlErrCode
@@ -231,6 +228,14 @@
     End Sub
     Public Sub PreviewData()
         'frmReportPage.ShowRepo("rptProductLst.rpt",, True)
+    End Sub
+
+    Private Sub txtStudentContactNo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtStudentContactNo.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
     End Sub
 
     'Private Sub frmMstProduct_Activated(sender As Object, e As EventArgs) Handles Me.Activated

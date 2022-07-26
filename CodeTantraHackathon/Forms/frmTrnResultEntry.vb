@@ -254,7 +254,6 @@ Public Class frmTrnResultEntry
         txtTotTransport.Text = ""
         txtRoundOff.Text = ""
         txtBillAmt.Text = ""
-        lblPurchaseInvFileName.Text = ""
         dtgPurchaseDtl.Rows.Clear()
         dtgPurchaseDtl.Rows.Add()
         setDateTimePickerBlank(dtpEntryDate)

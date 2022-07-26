@@ -25,17 +25,27 @@ Partial Class frmMstStudent
         Me.tctrlProductMst = New System.Windows.Forms.TabControl()
         Me.TabProductDtl = New System.Windows.Forms.TabPage()
         Me.gboxProductDtl = New System.Windows.Forms.GroupBox()
+        Me.dtpStudentDOB = New System.Windows.Forms.DateTimePicker()
+        Me.lblStudentDOB = New System.Windows.Forms.Label()
+        Me.cmbxStudentYear = New System.Windows.Forms.ComboBox()
+        Me.lblStudentYear = New System.Windows.Forms.Label()
+        Me.txtParentContactNo = New System.Windows.Forms.TextBox()
+        Me.lblParentContactNo = New System.Windows.Forms.Label()
+        Me.txtStudentContactNo = New System.Windows.Forms.TextBox()
+        Me.lblStudentContactNo = New System.Windows.Forms.Label()
+        Me.txtStudentEmail = New System.Windows.Forms.TextBox()
+        Me.lblStudentEmail = New System.Windows.Forms.Label()
+        Me.cmbxStudentClass = New System.Windows.Forms.ComboBox()
+        Me.lblStudentClass = New System.Windows.Forms.Label()
         Me.chkDisabled = New System.Windows.Forms.CheckBox()
-        Me.cmbxPostingAcGroup = New System.Windows.Forms.ComboBox()
-        Me.lblPostingAcGroup = New System.Windows.Forms.Label()
-        Me.txtUnitOfMeasure = New System.Windows.Forms.TextBox()
-        Me.lblUOM = New System.Windows.Forms.Label()
-        Me.txtProductName = New System.Windows.Forms.TextBox()
-        Me.cmbxCategory = New System.Windows.Forms.ComboBox()
-        Me.lblCategory = New System.Windows.Forms.Label()
+        Me.txtStudentCode = New System.Windows.Forms.TextBox()
+        Me.lblStudentCode = New System.Windows.Forms.Label()
+        Me.txtStudentName = New System.Windows.Forms.TextBox()
         Me.lblName = New System.Windows.Forms.Label()
         Me.TabProductLst = New System.Windows.Forms.TabPage()
         Me.dtgdProductLst = New System.Windows.Forms.DataGridView()
+        Me.txtStudentAddress = New System.Windows.Forms.TextBox()
+        Me.lblStudentAddress = New System.Windows.Forms.Label()
         Me.tctrlProductMst.SuspendLayout()
         Me.TabProductDtl.SuspendLayout()
         Me.gboxProductDtl.SuspendLayout()
@@ -66,20 +76,143 @@ Partial Class frmMstStudent
         '
         'gboxProductDtl
         '
+        Me.gboxProductDtl.Controls.Add(Me.txtStudentAddress)
+        Me.gboxProductDtl.Controls.Add(Me.lblStudentAddress)
+        Me.gboxProductDtl.Controls.Add(Me.dtpStudentDOB)
+        Me.gboxProductDtl.Controls.Add(Me.lblStudentDOB)
+        Me.gboxProductDtl.Controls.Add(Me.cmbxStudentYear)
+        Me.gboxProductDtl.Controls.Add(Me.lblStudentYear)
+        Me.gboxProductDtl.Controls.Add(Me.txtParentContactNo)
+        Me.gboxProductDtl.Controls.Add(Me.lblParentContactNo)
+        Me.gboxProductDtl.Controls.Add(Me.txtStudentContactNo)
+        Me.gboxProductDtl.Controls.Add(Me.lblStudentContactNo)
+        Me.gboxProductDtl.Controls.Add(Me.txtStudentEmail)
+        Me.gboxProductDtl.Controls.Add(Me.lblStudentEmail)
+        Me.gboxProductDtl.Controls.Add(Me.cmbxStudentClass)
+        Me.gboxProductDtl.Controls.Add(Me.lblStudentClass)
         Me.gboxProductDtl.Controls.Add(Me.chkDisabled)
-        Me.gboxProductDtl.Controls.Add(Me.cmbxPostingAcGroup)
-        Me.gboxProductDtl.Controls.Add(Me.lblPostingAcGroup)
-        Me.gboxProductDtl.Controls.Add(Me.txtUnitOfMeasure)
-        Me.gboxProductDtl.Controls.Add(Me.lblUOM)
-        Me.gboxProductDtl.Controls.Add(Me.txtProductName)
-        Me.gboxProductDtl.Controls.Add(Me.cmbxCategory)
-        Me.gboxProductDtl.Controls.Add(Me.lblCategory)
+        Me.gboxProductDtl.Controls.Add(Me.txtStudentCode)
+        Me.gboxProductDtl.Controls.Add(Me.lblStudentCode)
+        Me.gboxProductDtl.Controls.Add(Me.txtStudentName)
         Me.gboxProductDtl.Controls.Add(Me.lblName)
         Me.gboxProductDtl.Location = New System.Drawing.Point(170, 79)
         Me.gboxProductDtl.Name = "gboxProductDtl"
         Me.gboxProductDtl.Size = New System.Drawing.Size(853, 427)
         Me.gboxProductDtl.TabIndex = 30
         Me.gboxProductDtl.TabStop = False
+        '
+        'dtpStudentDOB
+        '
+        Me.dtpStudentDOB.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpStudentDOB.Location = New System.Drawing.Point(244, 249)
+        Me.dtpStudentDOB.Name = "dtpStudentDOB"
+        Me.dtpStudentDOB.Size = New System.Drawing.Size(109, 20)
+        Me.dtpStudentDOB.TabIndex = 80
+        Me.dtpStudentDOB.Value = New Date(2022, 7, 26, 13, 17, 23, 0)
+        '
+        'lblStudentDOB
+        '
+        Me.lblStudentDOB.AutoSize = True
+        Me.lblStudentDOB.ForeColor = System.Drawing.Color.Sienna
+        Me.lblStudentDOB.Location = New System.Drawing.Point(162, 252)
+        Me.lblStudentDOB.Name = "lblStudentDOB"
+        Me.lblStudentDOB.Size = New System.Drawing.Size(76, 13)
+        Me.lblStudentDOB.TabIndex = 79
+        Me.lblStudentDOB.Text = "Student DOB :"
+        '
+        'cmbxStudentYear
+        '
+        Me.cmbxStudentYear.AllowDrop = True
+        Me.cmbxStudentYear.FormattingEnabled = True
+        Me.cmbxStudentYear.Location = New System.Drawing.Point(244, 222)
+        Me.cmbxStudentYear.MaxLength = 50
+        Me.cmbxStudentYear.Name = "cmbxStudentYear"
+        Me.cmbxStudentYear.Size = New System.Drawing.Size(93, 21)
+        Me.cmbxStudentYear.TabIndex = 78
+        '
+        'lblStudentYear
+        '
+        Me.lblStudentYear.AutoSize = True
+        Me.lblStudentYear.ForeColor = System.Drawing.Color.Sienna
+        Me.lblStudentYear.Location = New System.Drawing.Point(163, 225)
+        Me.lblStudentYear.Name = "lblStudentYear"
+        Me.lblStudentYear.Size = New System.Drawing.Size(75, 13)
+        Me.lblStudentYear.TabIndex = 77
+        Me.lblStudentYear.Text = "Student Year :"
+        '
+        'txtParentContactNo
+        '
+        Me.txtParentContactNo.Location = New System.Drawing.Point(244, 196)
+        Me.txtParentContactNo.MaxLength = 10
+        Me.txtParentContactNo.Name = "txtParentContactNo"
+        Me.txtParentContactNo.Size = New System.Drawing.Size(292, 20)
+        Me.txtParentContactNo.TabIndex = 75
+        '
+        'lblParentContactNo
+        '
+        Me.lblParentContactNo.AutoSize = True
+        Me.lblParentContactNo.ForeColor = System.Drawing.Color.Sienna
+        Me.lblParentContactNo.Location = New System.Drawing.Point(134, 199)
+        Me.lblParentContactNo.Name = "lblParentContactNo"
+        Me.lblParentContactNo.Size = New System.Drawing.Size(104, 13)
+        Me.lblParentContactNo.TabIndex = 76
+        Me.lblParentContactNo.Text = "Parent Contact No. :"
+        '
+        'txtStudentContactNo
+        '
+        Me.txtStudentContactNo.Location = New System.Drawing.Point(244, 170)
+        Me.txtStudentContactNo.MaxLength = 10
+        Me.txtStudentContactNo.Name = "txtStudentContactNo"
+        Me.txtStudentContactNo.Size = New System.Drawing.Size(292, 20)
+        Me.txtStudentContactNo.TabIndex = 73
+        '
+        'lblStudentContactNo
+        '
+        Me.lblStudentContactNo.AutoSize = True
+        Me.lblStudentContactNo.ForeColor = System.Drawing.Color.Sienna
+        Me.lblStudentContactNo.Location = New System.Drawing.Point(128, 173)
+        Me.lblStudentContactNo.Name = "lblStudentContactNo"
+        Me.lblStudentContactNo.Size = New System.Drawing.Size(110, 13)
+        Me.lblStudentContactNo.TabIndex = 74
+        Me.lblStudentContactNo.Text = "Student Contact No. :"
+        '
+        'txtStudentEmail
+        '
+        Me.txtStudentEmail.Location = New System.Drawing.Point(244, 144)
+        Me.txtStudentEmail.MaxLength = 100
+        Me.txtStudentEmail.Name = "txtStudentEmail"
+        Me.txtStudentEmail.Size = New System.Drawing.Size(292, 20)
+        Me.txtStudentEmail.TabIndex = 71
+        '
+        'lblStudentEmail
+        '
+        Me.lblStudentEmail.AutoSize = True
+        Me.lblStudentEmail.ForeColor = System.Drawing.Color.Sienna
+        Me.lblStudentEmail.Location = New System.Drawing.Point(160, 147)
+        Me.lblStudentEmail.Name = "lblStudentEmail"
+        Me.lblStudentEmail.Size = New System.Drawing.Size(78, 13)
+        Me.lblStudentEmail.TabIndex = 72
+        Me.lblStudentEmail.Text = "Student Email :"
+        '
+        'cmbxStudentClass
+        '
+        Me.cmbxStudentClass.AllowDrop = True
+        Me.cmbxStudentClass.FormattingEnabled = True
+        Me.cmbxStudentClass.Location = New System.Drawing.Point(244, 117)
+        Me.cmbxStudentClass.MaxLength = 50
+        Me.cmbxStudentClass.Name = "cmbxStudentClass"
+        Me.cmbxStudentClass.Size = New System.Drawing.Size(93, 21)
+        Me.cmbxStudentClass.TabIndex = 70
+        '
+        'lblStudentClass
+        '
+        Me.lblStudentClass.AutoSize = True
+        Me.lblStudentClass.ForeColor = System.Drawing.Color.Sienna
+        Me.lblStudentClass.Location = New System.Drawing.Point(160, 120)
+        Me.lblStudentClass.Name = "lblStudentClass"
+        Me.lblStudentClass.Size = New System.Drawing.Size(78, 13)
+        Me.lblStudentClass.TabIndex = 69
+        Me.lblStudentClass.Text = "Student Class :"
         '
         'chkDisabled
         '
@@ -92,81 +225,41 @@ Partial Class frmMstStudent
         Me.chkDisabled.Text = "Disable Student"
         Me.chkDisabled.UseVisualStyleBackColor = True
         '
-        'cmbxPostingAcGroup
+        'txtStudentCode
         '
-        Me.cmbxPostingAcGroup.AllowDrop = True
-        Me.cmbxPostingAcGroup.FormattingEnabled = True
-        Me.cmbxPostingAcGroup.Location = New System.Drawing.Point(262, 180)
-        Me.cmbxPostingAcGroup.MaxLength = 100
-        Me.cmbxPostingAcGroup.Name = "cmbxPostingAcGroup"
-        Me.cmbxPostingAcGroup.Size = New System.Drawing.Size(226, 21)
-        Me.cmbxPostingAcGroup.TabIndex = 59
+        Me.txtStudentCode.Location = New System.Drawing.Point(244, 91)
+        Me.txtStudentCode.MaxLength = 10
+        Me.txtStudentCode.Name = "txtStudentCode"
+        Me.txtStudentCode.Size = New System.Drawing.Size(93, 20)
+        Me.txtStudentCode.TabIndex = 57
         '
-        'lblPostingAcGroup
+        'lblStudentCode
         '
-        Me.lblPostingAcGroup.AutoSize = True
-        Me.lblPostingAcGroup.ForeColor = System.Drawing.Color.Sienna
-        Me.lblPostingAcGroup.Location = New System.Drawing.Point(133, 184)
-        Me.lblPostingAcGroup.Name = "lblPostingAcGroup"
-        Me.lblPostingAcGroup.Size = New System.Drawing.Size(123, 13)
-        Me.lblPostingAcGroup.TabIndex = 60
-        Me.lblPostingAcGroup.Text = "Posting Account Group :"
+        Me.lblStudentCode.AutoSize = True
+        Me.lblStudentCode.ForeColor = System.Drawing.Color.Sienna
+        Me.lblStudentCode.Location = New System.Drawing.Point(160, 94)
+        Me.lblStudentCode.Name = "lblStudentCode"
+        Me.lblStudentCode.Size = New System.Drawing.Size(78, 13)
+        Me.lblStudentCode.TabIndex = 58
+        Me.lblStudentCode.Text = "Student Code :"
         '
-        'txtUnitOfMeasure
+        'txtStudentName
         '
-        Me.txtUnitOfMeasure.Location = New System.Drawing.Point(262, 158)
-        Me.txtUnitOfMeasure.MaxLength = 10
-        Me.txtUnitOfMeasure.Name = "txtUnitOfMeasure"
-        Me.txtUnitOfMeasure.Size = New System.Drawing.Size(76, 20)
-        Me.txtUnitOfMeasure.TabIndex = 57
-        '
-        'lblUOM
-        '
-        Me.lblUOM.AutoSize = True
-        Me.lblUOM.ForeColor = System.Drawing.Color.Sienna
-        Me.lblUOM.Location = New System.Drawing.Point(168, 161)
-        Me.lblUOM.Name = "lblUOM"
-        Me.lblUOM.Size = New System.Drawing.Size(88, 13)
-        Me.lblUOM.TabIndex = 58
-        Me.lblUOM.Text = "Unit of Measure :"
-        '
-        'txtProductName
-        '
-        Me.txtProductName.Location = New System.Drawing.Point(262, 113)
-        Me.txtProductName.MaxLength = 125
-        Me.txtProductName.Name = "txtProductName"
-        Me.txtProductName.Size = New System.Drawing.Size(292, 20)
-        Me.txtProductName.TabIndex = 52
-        '
-        'cmbxCategory
-        '
-        Me.cmbxCategory.AllowDrop = True
-        Me.cmbxCategory.FormattingEnabled = True
-        Me.cmbxCategory.Location = New System.Drawing.Point(262, 135)
-        Me.cmbxCategory.MaxLength = 50
-        Me.cmbxCategory.Name = "cmbxCategory"
-        Me.cmbxCategory.Size = New System.Drawing.Size(226, 21)
-        Me.cmbxCategory.TabIndex = 53
-        '
-        'lblCategory
-        '
-        Me.lblCategory.AutoSize = True
-        Me.lblCategory.ForeColor = System.Drawing.Color.Sienna
-        Me.lblCategory.Location = New System.Drawing.Point(201, 139)
-        Me.lblCategory.Name = "lblCategory"
-        Me.lblCategory.Size = New System.Drawing.Size(55, 13)
-        Me.lblCategory.TabIndex = 55
-        Me.lblCategory.Text = "Category :"
+        Me.txtStudentName.Location = New System.Drawing.Point(244, 65)
+        Me.txtStudentName.MaxLength = 125
+        Me.txtStudentName.Name = "txtStudentName"
+        Me.txtStudentName.Size = New System.Drawing.Size(292, 20)
+        Me.txtStudentName.TabIndex = 52
         '
         'lblName
         '
         Me.lblName.AutoSize = True
         Me.lblName.ForeColor = System.Drawing.Color.Sienna
-        Me.lblName.Location = New System.Drawing.Point(175, 116)
+        Me.lblName.Location = New System.Drawing.Point(157, 68)
         Me.lblName.Name = "lblName"
         Me.lblName.Size = New System.Drawing.Size(81, 13)
         Me.lblName.TabIndex = 54
-        Me.lblName.Text = "Product Name :"
+        Me.lblName.Text = "Student Name :"
         '
         'TabProductLst
         '
@@ -185,6 +278,26 @@ Partial Class frmMstStudent
         Me.dtgdProductLst.Name = "dtgdProductLst"
         Me.dtgdProductLst.Size = New System.Drawing.Size(1190, 565)
         Me.dtgdProductLst.TabIndex = 0
+        '
+        'txtStudentAddress
+        '
+        Me.txtStudentAddress.Location = New System.Drawing.Point(244, 275)
+        Me.txtStudentAddress.MaxLength = 4000
+        Me.txtStudentAddress.Multiline = True
+        Me.txtStudentAddress.Name = "txtStudentAddress"
+        Me.txtStudentAddress.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txtStudentAddress.Size = New System.Drawing.Size(292, 58)
+        Me.txtStudentAddress.TabIndex = 81
+        '
+        'lblStudentAddress
+        '
+        Me.lblStudentAddress.AutoSize = True
+        Me.lblStudentAddress.ForeColor = System.Drawing.Color.Sienna
+        Me.lblStudentAddress.Location = New System.Drawing.Point(147, 278)
+        Me.lblStudentAddress.Name = "lblStudentAddress"
+        Me.lblStudentAddress.Size = New System.Drawing.Size(91, 13)
+        Me.lblStudentAddress.TabIndex = 82
+        Me.lblStudentAddress.Text = "Student Address :"
         '
         'frmMstStudent
         '
@@ -208,14 +321,24 @@ Partial Class frmMstStudent
     Friend WithEvents TabProductDtl As TabPage
     Friend WithEvents gboxProductDtl As GroupBox
     Friend WithEvents chkDisabled As CheckBox
-    Friend WithEvents cmbxPostingAcGroup As ComboBox
-    Friend WithEvents lblPostingAcGroup As Label
-    Friend WithEvents txtUnitOfMeasure As TextBox
-    Friend WithEvents lblUOM As Label
-    Friend WithEvents txtProductName As TextBox
-    Friend WithEvents cmbxCategory As ComboBox
-    Friend WithEvents lblCategory As Label
+    Friend WithEvents txtStudentCode As TextBox
+    Friend WithEvents lblStudentCode As Label
+    Friend WithEvents txtStudentName As TextBox
     Friend WithEvents lblName As Label
     Friend WithEvents TabProductLst As TabPage
     Friend WithEvents dtgdProductLst As DataGridView
+    Friend WithEvents dtpStudentDOB As DateTimePicker
+    Friend WithEvents lblStudentDOB As Label
+    Friend WithEvents cmbxStudentYear As ComboBox
+    Friend WithEvents lblStudentYear As Label
+    Friend WithEvents txtParentContactNo As TextBox
+    Friend WithEvents lblParentContactNo As Label
+    Friend WithEvents txtStudentContactNo As TextBox
+    Friend WithEvents lblStudentContactNo As Label
+    Friend WithEvents txtStudentEmail As TextBox
+    Friend WithEvents lblStudentEmail As Label
+    Friend WithEvents cmbxStudentClass As ComboBox
+    Friend WithEvents lblStudentClass As Label
+    Friend WithEvents txtStudentAddress As TextBox
+    Friend WithEvents lblStudentAddress As Label
 End Class

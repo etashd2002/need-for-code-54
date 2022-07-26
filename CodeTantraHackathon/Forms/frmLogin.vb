@@ -18,9 +18,9 @@ Public Class frmLogin
         If MyConn.RecordCount = 0 Then
             MessageBox.Show("Login Name / Password does not match, try again ...")
         Else
-            GlobalVariables.UserCode = MyConn.DBDT.Rows(0)("StaffCode").ToString
+            'GlobalVariables.UserCode = MyConn.DBDT.Rows(0)("StaffCode").ToString
             GlobalVariables.UserId = MyConn.DBDT.Rows(0)("UserId").ToString
-            GlobalVariables.UsrName = MyConn.DBDT.Rows(0)("StaffName").ToString
+            'GlobalVariables.UsrName = MyConn.DBDT.Rows(0)("StaffName").ToString
             MyConn.DBDT.Clear()
             strSysName = System.Windows.Forms.SystemInformation.ComputerName
             frmMdiMain.Show()
