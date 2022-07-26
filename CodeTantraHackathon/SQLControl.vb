@@ -161,83 +161,83 @@ Public Class SQLControl
     Public Sub ClearDBDT()
         DBDT.Clear()
     End Sub
-    Public Shared Function GetMenuFormId(strMenuName As String, strFormName As String) As Integer
-        Dim cnData As New SQLControl
-        Try
-            cnData.AddParam("@MenuName", strMenuName)
-            cnData.AddParam("@formName", strFormName)
-            cnData.ExecQuery("Select MenuFormId from sysMenuForms Where MenuName = @MenuName And FormName = @FormName;")
-            If cnData.HasException = True Then
-                Return cnData.ReturnValue
-                Exit Function
-            End If
+    'Public Shared Function GetMenuFormId(strMenuName As String, strFormName As String) As Integer
+    '    Dim cnData As New SQLControl
+    '    Try
+    '        cnData.AddParam("@MenuName", strMenuName)
+    '        cnData.AddParam("@formName", strFormName)
+    '        cnData.ExecQuery("Select MenuFormId from sysMenuForms Where MenuName = @MenuName And FormName = @FormName;")
+    '        If cnData.HasException = True Then
+    '            Return cnData.ReturnValue
+    '            Exit Function
+    '        End If
 
-            If cnData.ReturnValue = 0 Then
-                MessageBox.Show("Form Name not mentioned in the SysMenuForm Table, cannot proceed with this Menu option ...")
-            End If
-        Catch ex As Exception
-            MessageBox.Show(cnData.Exception)
-        Finally
-            '            cnData = Nothing
-        End Try
-        Return cnData.ReturnValue
-    End Function
+    '        If cnData.ReturnValue = 0 Then
+    '            MessageBox.Show("Form Name not mentioned in the SysMenuForm Table, cannot proceed with this Menu option ...")
+    '        End If
+    '    Catch ex As Exception
+    '        MessageBox.Show(cnData.Exception)
+    '    Finally
+    '        '            cnData = Nothing
+    '    End Try
+    '    Return cnData.ReturnValue
+    'End Function
 
-    Public Shared Function GetUserRights(intMenuFormId As Integer, strUserCode As String, blnEnaFlag As Boolean) As Integer
-        Dim cnData As New SQLControl
-        Try
-            cnData.AddParam("@MenuFormId", intMenuFormId)
-            cnData.AddParam("@UserCode", strUserCode)
-            cnData.ExecQuery("Select * from SysGenAuthority Where MenuFormId = @MenuformId And UserCode = @UserCode;")
-            If cnData.HasException = True Then
-                Return 0
-                Exit Function
-            End If
+    'Public Shared Function GetUserRights(intMenuFormId As Integer, strUserCode As String, blnEnaFlag As Boolean) As Integer
+    '    Dim cnData As New SQLControl
+    '    Try
+    '        cnData.AddParam("@MenuFormId", intMenuFormId)
+    '        cnData.AddParam("@UserCode", strUserCode)
+    '        cnData.ExecQuery("Select * from SysGenAuthority Where MenuFormId = @MenuformId And UserCode = @UserCode;")
+    '        If cnData.HasException = True Then
+    '            Return 0
+    '            Exit Function
+    '        End If
 
 
-            If cnData.RecordCount = 0 Then
-                MessageBox.Show("Rights for the User for this option has not been initiated ...")
-                For Each button In SIAMain.MainToolBar.Items.OfType(Of ToolStripButton)()
-                    button.Enabled = False
-                Next
-                Return 0
-                Exit Function
-            Else
-                If cnData.DBDT(0)("AllowAdd").ToString() = "Y" Then
-                    SIAMain.NewToolBtn.Enabled = blnEnaFlag
-                Else
-                    SIAMain.NewToolBtn.Enabled = False
-                End If
-                If cnData.DBDT(0)("AllowEdit").ToString() = "Y" Then
-                    SIAMain.EditToolBtn.Enabled = blnEnaFlag
-                Else
-                    SIAMain.EditToolBtn.Enabled = False
-                End If
-                If cnData.DBDT(0)("AllowDelete").ToString() = "Y" Then
-                    SIAMain.DeleteToolBtn.Enabled = blnEnaFlag
-                Else
-                    SIAMain.DeleteToolBtn.Enabled = False
-                End If
-                If cnData.DBDT(0)("AllowPrint").ToString() = "Y" Then
-                    SIAMain.PrintToolBtn.Enabled = blnEnaFlag
-                Else
-                    SIAMain.PrintToolBtn.Enabled = False
-                End If
-                If cnData.DBDT(0)("AllowPreview").ToString() = "Y" Then
-                    SIAMain.PreviewToolBtn.Enabled = blnEnaFlag
-                Else
-                    SIAMain.PreviewToolBtn.Enabled = False
-                End If
-                SIAMain.SaveToolBtn.Enabled = Not blnEnaFlag
-                SIAMain.CancelToolBtn.Enabled = Not blnEnaFlag
-            End If
-        Catch ex As Exception
-            MessageBox.Show(cnData.Exception)
-        Finally
+    '        If cnData.RecordCount = 0 Then
+    '            MessageBox.Show("Rights for the User for this option has not been initiated ...")
+    '            For Each button In frmMdiMain.MainToolBar.Items.OfType(Of ToolStripButton)()
+    '                button.Enabled = False
+    '            Next
+    '            Return 0
+    '            Exit Function
+    '        Else
+    '            If cnData.DBDT(0)("AllowAdd").ToString() = "Y" Then
+    '                frmMdiMain.NewToolBtn.Enabled = blnEnaFlag
+    '            Else
+    '                frmMdiMain.NewToolBtn.Enabled = False
+    '            End If
+    '            If cnData.DBDT(0)("AllowEdit").ToString() = "Y" Then
+    '                frmMdiMain.EditToolBtn.Enabled = blnEnaFlag
+    '            Else
+    '                frmMdiMain.EditToolBtn.Enabled = False
+    '            End If
+    '            If cnData.DBDT(0)("AllowDelete").ToString() = "Y" Then
+    '                frmMdiMain.DeleteToolBtn.Enabled = blnEnaFlag
+    '            Else
+    '                frmMdiMain.DeleteToolBtn.Enabled = False
+    '            End If
+    '            If cnData.DBDT(0)("AllowPrint").ToString() = "Y" Then
+    '                frmMdiMain.PrintToolBtn.Enabled = blnEnaFlag
+    '            Else
+    '                frmMdiMain.PrintToolBtn.Enabled = False
+    '            End If
+    '            If cnData.DBDT(0)("AllowPreview").ToString() = "Y" Then
+    '                frmMdiMain.PreviewToolBtn.Enabled = blnEnaFlag
+    '            Else
+    '                frmMdiMain.PreviewToolBtn.Enabled = False
+    '            End If
+    '            frmMdiMain.SaveToolBtn.Enabled = Not blnEnaFlag
+    '            frmMdiMain.CancelToolBtn.Enabled = Not blnEnaFlag
+    '        End If
+    '    Catch ex As Exception
+    '        MessageBox.Show(cnData.Exception)
+    '    Finally
 
-        End Try
-        Return cnData.RecordCount
-    End Function
+    '    End Try
+    '    Return cnData.RecordCount
+    'End Function
 
     Private Declare Auto Function GetPrivateProfileString Lib "kernel32" (ByVal lpAppName As String,
         ByVal lpKeyName As String,

@@ -25,23 +25,11 @@ Partial Class frmMdiMain
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMdiMain))
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.mnuMasters = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuMstSalutation = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuMstBrand = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuMstCategory = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuMstProducts = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuMstDebtor = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mstMstSupplier = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator4 = New System.Windows.Forms.ToolStripSeparator()
-        Me.mnuMstEmployee = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuMstExpense = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuMstStudent = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuMstSubjects = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuMstStaff = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuTransaction = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuTrnPurchase = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuTrnSale = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuTrnReceipt = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuTrnPayment = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuTrnSaleReturn = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuTrnGiftCard = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuTrnPurchaseReturn = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuTrnResultEntry = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuReports = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuRepoBrand = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuRepoCategory = New System.Windows.Forms.ToolStripMenuItem()
@@ -63,17 +51,6 @@ Partial Class frmMdiMain
         Me.mnuRepoStkRegister = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.mnuRepoOsReceivables = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSystemTools = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSysChangePassword = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSysUsers = New System.Windows.Forms.ToolStripMenuItem()
-        Me.mnuSysUserPermissions = New System.Windows.Forms.ToolStripMenuItem()
-        Me.WindowsMenu = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewWindowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CascadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TileVerticalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TileHorizontalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CloseAllToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ArrangeIconsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.MainToolBar = New System.Windows.Forms.ToolStrip()
         Me.NewToolBtn = New System.Windows.Forms.ToolStripButton()
@@ -94,9 +71,8 @@ Partial Class frmMdiMain
         'MenuStrip
         '
         Me.MenuStrip.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuMasters, Me.mnuTransaction, Me.mnuReports, Me.mnuSystemTools, Me.WindowsMenu, Me.mnuExit})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuMasters, Me.mnuTransaction, Me.mnuReports, Me.mnuExit})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip.MdiWindowListItem = Me.WindowsMenu
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(987, 24)
         Me.MenuStrip.TabIndex = 6
@@ -104,114 +80,43 @@ Partial Class frmMdiMain
         '
         'mnuMasters
         '
-        Me.mnuMasters.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuMstSalutation, Me.mnuMstBrand, Me.mnuMstCategory, Me.mnuMstProducts, Me.mnuMstDebtor, Me.mstMstSupplier, Me.ToolStripSeparator4, Me.mnuMstEmployee, Me.mnuMstExpense})
+        Me.mnuMasters.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuMstStudent, Me.mnuMstSubjects, Me.mnuMstStaff})
         Me.mnuMasters.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder
         Me.mnuMasters.Name = "mnuMasters"
-        Me.mnuMasters.Size = New System.Drawing.Size(63, 20)
-        Me.mnuMasters.Text = "&Masters"
+        Me.mnuMasters.Size = New System.Drawing.Size(92, 20)
+        Me.mnuMasters.Text = "&Masters Data"
         Me.mnuMasters.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         '
-        'mnuMstSalutation
+        'mnuMstStudent
         '
-        Me.mnuMstSalutation.Name = "mnuMstSalutation"
-        Me.mnuMstSalutation.Size = New System.Drawing.Size(129, 22)
-        Me.mnuMstSalutation.Text = "Salutation"
+        Me.mnuMstStudent.Name = "mnuMstStudent"
+        Me.mnuMstStudent.Size = New System.Drawing.Size(122, 22)
+        Me.mnuMstStudent.Text = "Students"
         '
-        'mnuMstBrand
+        'mnuMstSubjects
         '
-        Me.mnuMstBrand.Name = "mnuMstBrand"
-        Me.mnuMstBrand.Size = New System.Drawing.Size(129, 22)
-        Me.mnuMstBrand.Text = "Brand"
+        Me.mnuMstSubjects.Name = "mnuMstSubjects"
+        Me.mnuMstSubjects.Size = New System.Drawing.Size(122, 22)
+        Me.mnuMstSubjects.Text = "Subjects"
         '
-        'mnuMstCategory
+        'mnuMstStaff
         '
-        Me.mnuMstCategory.Name = "mnuMstCategory"
-        Me.mnuMstCategory.Size = New System.Drawing.Size(129, 22)
-        Me.mnuMstCategory.Text = "Category"
-        '
-        'mnuMstProducts
-        '
-        Me.mnuMstProducts.Name = "mnuMstProducts"
-        Me.mnuMstProducts.Size = New System.Drawing.Size(129, 22)
-        Me.mnuMstProducts.Text = "Products"
-        '
-        'mnuMstDebtor
-        '
-        Me.mnuMstDebtor.Name = "mnuMstDebtor"
-        Me.mnuMstDebtor.Size = New System.Drawing.Size(129, 22)
-        Me.mnuMstDebtor.Text = "Customer"
-        '
-        'mstMstSupplier
-        '
-        Me.mstMstSupplier.Name = "mstMstSupplier"
-        Me.mstMstSupplier.Size = New System.Drawing.Size(129, 22)
-        Me.mstMstSupplier.Text = "Supplier"
-        '
-        'ToolStripSeparator4
-        '
-        Me.ToolStripSeparator4.Name = "ToolStripSeparator4"
-        Me.ToolStripSeparator4.Size = New System.Drawing.Size(126, 6)
-        '
-        'mnuMstEmployee
-        '
-        Me.mnuMstEmployee.Name = "mnuMstEmployee"
-        Me.mnuMstEmployee.Size = New System.Drawing.Size(129, 22)
-        Me.mnuMstEmployee.Text = "Employee"
-        '
-        'mnuMstExpense
-        '
-        Me.mnuMstExpense.Name = "mnuMstExpense"
-        Me.mnuMstExpense.Size = New System.Drawing.Size(129, 22)
-        Me.mnuMstExpense.Text = "Expense"
+        Me.mnuMstStaff.Name = "mnuMstStaff"
+        Me.mnuMstStaff.Size = New System.Drawing.Size(122, 22)
+        Me.mnuMstStaff.Text = "Staff"
         '
         'mnuTransaction
         '
-        Me.mnuTransaction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuTrnPurchase, Me.mnuTrnSale, Me.mnuTrnReceipt, Me.mnuTrnPayment, Me.mnuTrnSaleReturn, Me.mnuTrnPurchaseReturn, Me.mnuTrnGiftCard})
+        Me.mnuTransaction.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuTrnResultEntry})
         Me.mnuTransaction.Name = "mnuTransaction"
         Me.mnuTransaction.Size = New System.Drawing.Size(83, 20)
-        Me.mnuTransaction.Text = "Transaction"
+        Me.mnuTransaction.Text = "Result Data"
         '
-        'mnuTrnPurchase
+        'mnuTrnResultEntry
         '
-        Me.mnuTrnPurchase.Name = "mnuTrnPurchase"
-        Me.mnuTrnPurchase.Size = New System.Drawing.Size(180, 22)
-        Me.mnuTrnPurchase.Text = "Purchase"
-        '
-        'mnuTrnSale
-        '
-        Me.mnuTrnSale.Name = "mnuTrnSale"
-        Me.mnuTrnSale.Size = New System.Drawing.Size(180, 22)
-        Me.mnuTrnSale.Text = "Sale"
-        '
-        'mnuTrnReceipt
-        '
-        Me.mnuTrnReceipt.Name = "mnuTrnReceipt"
-        Me.mnuTrnReceipt.Size = New System.Drawing.Size(180, 22)
-        Me.mnuTrnReceipt.Text = "Receipt"
-        '
-        'mnuTrnPayment
-        '
-        Me.mnuTrnPayment.Name = "mnuTrnPayment"
-        Me.mnuTrnPayment.Size = New System.Drawing.Size(180, 22)
-        Me.mnuTrnPayment.Text = "Payment"
-        '
-        'mnuTrnSaleReturn
-        '
-        Me.mnuTrnSaleReturn.Name = "mnuTrnSaleReturn"
-        Me.mnuTrnSaleReturn.Size = New System.Drawing.Size(180, 22)
-        Me.mnuTrnSaleReturn.Text = "Sale Return"
-        '
-        'mnuTrnGiftCard
-        '
-        Me.mnuTrnGiftCard.Name = "mnuTrnGiftCard"
-        Me.mnuTrnGiftCard.Size = New System.Drawing.Size(180, 22)
-        Me.mnuTrnGiftCard.Text = "Gift Card"
-        '
-        'mnuTrnPurchaseReturn
-        '
-        Me.mnuTrnPurchaseReturn.Name = "mnuTrnPurchaseReturn"
-        Me.mnuTrnPurchaseReturn.Size = New System.Drawing.Size(180, 22)
-        Me.mnuTrnPurchaseReturn.Text = "Purchase Return"
+        Me.mnuTrnResultEntry.Name = "mnuTrnResultEntry"
+        Me.mnuTrnResultEntry.Size = New System.Drawing.Size(180, 22)
+        Me.mnuTrnResultEntry.Text = "Result Entry"
         '
         'mnuReports
         '
@@ -336,74 +241,6 @@ Partial Class frmMdiMain
         Me.mnuRepoOsReceivables.Name = "mnuRepoOsReceivables"
         Me.mnuRepoOsReceivables.Size = New System.Drawing.Size(166, 22)
         Me.mnuRepoOsReceivables.Text = "O/s Receivables"
-        '
-        'mnuSystemTools
-        '
-        Me.mnuSystemTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuSysChangePassword, Me.mnuSysUsers, Me.mnuSysUserPermissions})
-        Me.mnuSystemTools.Name = "mnuSystemTools"
-        Me.mnuSystemTools.Size = New System.Drawing.Size(92, 20)
-        Me.mnuSystemTools.Text = "&System Tools"
-        '
-        'mnuSysChangePassword
-        '
-        Me.mnuSysChangePassword.Name = "mnuSysChangePassword"
-        Me.mnuSysChangePassword.Size = New System.Drawing.Size(174, 22)
-        Me.mnuSysChangePassword.Text = "Change Password"
-        '
-        'mnuSysUsers
-        '
-        Me.mnuSysUsers.Name = "mnuSysUsers"
-        Me.mnuSysUsers.Size = New System.Drawing.Size(174, 22)
-        Me.mnuSysUsers.Text = "Users"
-        '
-        'mnuSysUserPermissions
-        '
-        Me.mnuSysUserPermissions.Name = "mnuSysUserPermissions"
-        Me.mnuSysUserPermissions.Size = New System.Drawing.Size(174, 22)
-        Me.mnuSysUserPermissions.Text = "User Permissions"
-        '
-        'WindowsMenu
-        '
-        Me.WindowsMenu.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewWindowToolStripMenuItem, Me.CascadeToolStripMenuItem, Me.TileVerticalToolStripMenuItem, Me.TileHorizontalToolStripMenuItem, Me.CloseAllToolStripMenuItem, Me.ArrangeIconsToolStripMenuItem})
-        Me.WindowsMenu.Name = "WindowsMenu"
-        Me.WindowsMenu.Size = New System.Drawing.Size(69, 20)
-        Me.WindowsMenu.Text = "&Windows"
-        '
-        'NewWindowToolStripMenuItem
-        '
-        Me.NewWindowToolStripMenuItem.Name = "NewWindowToolStripMenuItem"
-        Me.NewWindowToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.NewWindowToolStripMenuItem.Text = "&New Window"
-        '
-        'CascadeToolStripMenuItem
-        '
-        Me.CascadeToolStripMenuItem.Name = "CascadeToolStripMenuItem"
-        Me.CascadeToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.CascadeToolStripMenuItem.Text = "&Cascade"
-        '
-        'TileVerticalToolStripMenuItem
-        '
-        Me.TileVerticalToolStripMenuItem.Name = "TileVerticalToolStripMenuItem"
-        Me.TileVerticalToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.TileVerticalToolStripMenuItem.Text = "Tile &Vertical"
-        '
-        'TileHorizontalToolStripMenuItem
-        '
-        Me.TileHorizontalToolStripMenuItem.Name = "TileHorizontalToolStripMenuItem"
-        Me.TileHorizontalToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.TileHorizontalToolStripMenuItem.Text = "Tile &Horizontal"
-        '
-        'CloseAllToolStripMenuItem
-        '
-        Me.CloseAllToolStripMenuItem.Name = "CloseAllToolStripMenuItem"
-        Me.CloseAllToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.CloseAllToolStripMenuItem.Text = "C&lose All"
-        '
-        'ArrangeIconsToolStripMenuItem
-        '
-        Me.ArrangeIconsToolStripMenuItem.Name = "ArrangeIconsToolStripMenuItem"
-        Me.ArrangeIconsToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
-        Me.ArrangeIconsToolStripMenuItem.Text = "&Arrange Icons"
         '
         'mnuExit
         '
@@ -538,23 +375,8 @@ Partial Class frmMdiMain
 
     Friend WithEvents MenuStrip As MenuStrip
     Friend WithEvents mnuMasters As ToolStripMenuItem
-    Friend WithEvents mnuMstDebtor As ToolStripMenuItem
-    Friend WithEvents mnuMstProducts As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator4 As ToolStripSeparator
-    Friend WithEvents mnuMstEmployee As ToolStripMenuItem
     Friend WithEvents mnuTransaction As ToolStripMenuItem
     Friend WithEvents mnuReports As ToolStripMenuItem
-    Friend WithEvents mnuSystemTools As ToolStripMenuItem
-    Friend WithEvents mnuSysChangePassword As ToolStripMenuItem
-    Friend WithEvents mnuSysUsers As ToolStripMenuItem
-    Friend WithEvents mnuSysUserPermissions As ToolStripMenuItem
-    Friend WithEvents WindowsMenu As ToolStripMenuItem
-    Friend WithEvents NewWindowToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CascadeToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TileVerticalToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TileHorizontalToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CloseAllToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ArrangeIconsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents mnuExit As ToolStripMenuItem
     Friend WithEvents MainToolBar As ToolStrip
     Friend WithEvents NewToolBtn As ToolStripButton
@@ -568,18 +390,10 @@ Partial Class frmMdiMain
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
     Friend WithEvents HelpToolBtn As ToolStripButton
     Friend WithEvents CloseToolBtn As ToolStripButton
-    Friend WithEvents mnuMstCategory As ToolStripMenuItem
-    Friend WithEvents mstMstSupplier As ToolStripMenuItem
-    Friend WithEvents mnuTrnPurchase As ToolStripMenuItem
-    Friend WithEvents mnuMstSalutation As ToolStripMenuItem
-    Friend WithEvents mnuMstBrand As ToolStripMenuItem
-    Friend WithEvents mnuMstExpense As ToolStripMenuItem
-    Friend WithEvents mnuTrnSale As ToolStripMenuItem
-    Friend WithEvents mnuTrnReceipt As ToolStripMenuItem
-    Friend WithEvents mnuTrnPayment As ToolStripMenuItem
-    Friend WithEvents mnuTrnSaleReturn As ToolStripMenuItem
-    Friend WithEvents mnuTrnGiftCard As ToolStripMenuItem
-    Friend WithEvents mnuTrnPurchaseReturn As ToolStripMenuItem
+    Friend WithEvents mnuMstStaff As ToolStripMenuItem
+    Friend WithEvents mnuTrnResultEntry As ToolStripMenuItem
+    Friend WithEvents mnuMstStudent As ToolStripMenuItem
+    Friend WithEvents mnuMstSubjects As ToolStripMenuItem
     Friend WithEvents mnuRepoBrand As ToolStripMenuItem
     Friend WithEvents mnuRepoCategory As ToolStripMenuItem
     Friend WithEvents mnuRepoProduct As ToolStripMenuItem

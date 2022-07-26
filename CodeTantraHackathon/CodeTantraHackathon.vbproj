@@ -85,6 +85,30 @@
     <Compile Include="Forms\frmMdiMain.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\frmMstStaff.Designer.vb">
+      <DependentUpon>frmMstStaff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMstStaff.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMstStudent.Designer.vb">
+      <DependentUpon>frmMstStudent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMstStudent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMstSubject.Designer.vb">
+      <DependentUpon>frmMstSubject.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMstSubject.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmTrnResultEntry.Designer.vb">
+      <DependentUpon>frmTrnResultEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmTrnResultEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -109,6 +133,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMdiMain.resx">
       <DependentUpon>frmMdiMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMstStaff.resx">
+      <DependentUpon>frmMstStaff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMstStudent.resx">
+      <DependentUpon>frmMstStudent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMstSubject.resx">
+      <DependentUpon>frmMstSubject.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmTrnResultEntry.resx">
+      <DependentUpon>frmTrnResultEntry.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

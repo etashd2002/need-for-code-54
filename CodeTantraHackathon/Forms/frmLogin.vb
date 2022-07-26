@@ -18,9 +18,9 @@ Public Class frmLogin
         If MyConn.RecordCount = 0 Then
             MessageBox.Show("Login Name / Password does not match, try again ...")
         Else
-            GlobalVariables.UserCode = MyConn.DBDT.Rows(0)("UsrCode").ToString
-            GlobalVariables.UserId = MyConn.DBDT.Rows(0)("SysUserId").ToString
-            GlobalVariables.UsrName = MyConn.DBDT.Rows(0)("UsrName").ToString
+            GlobalVariables.UserCode = MyConn.DBDT.Rows(0)("StaffCode").ToString
+            GlobalVariables.UserId = MyConn.DBDT.Rows(0)("UserId").ToString
+            GlobalVariables.UsrName = MyConn.DBDT.Rows(0)("StaffName").ToString
             MyConn.DBDT.Clear()
             strSysName = System.Windows.Forms.SystemInformation.ComputerName
             frmMdiMain.Show()
@@ -54,16 +54,7 @@ Public Class frmLogin
     Private Sub frmLogin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim strINIFilePathName As String
         ' get Server Connection Details
-        If System.IO.File.Exists("\\hp-pc\e\RetailStoreSQL\RetailStoreSQL\bin\Debug\WINRSSQLScript.INI") = False Then
-            If System.IO.File.Exists("d:\WINRSSQLScript.INI") = False Then
-                MessageBox.Show("INI Script not found ...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Application.Exit()
-            Else
-                strINIFilePathName = "d:\WINRSSQLScript.INI"
-            End If
-        Else
-            strINIFilePathName = "\\hp-pc\e\RetailStoreSQL\RetailStoreSQL\bin\Debug\WINRSSQLScript.INI"
-        End If
+        strINIFilePathName = "C:\Users\etash\source\repos\etashd2002\need-for-code-54\team54.INI"
         GlobalVariables.strServer = SQLControl.GetIniValue("Database", "Server", strINIFilePathName)
         GlobalVariables.strDatabase = SQLControl.GetIniValue("Database", "Database", strINIFilePathName)
         GlobalVariables.strUser = SQLControl.GetIniValue("Database", "User", strINIFilePathName)
@@ -75,6 +66,5 @@ Public Class frmLogin
             MessageBox.Show("Server Details not available, cannot proceed with running the Application ...")
             Application.Exit()
         End If
-
     End Sub
 End Class
