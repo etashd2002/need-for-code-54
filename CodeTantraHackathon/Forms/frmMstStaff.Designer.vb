@@ -22,10 +22,9 @@ Partial Class frmMstStaff
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.tctrlProductMst = New System.Windows.Forms.TabControl()
-        Me.TabProductDtl = New System.Windows.Forms.TabPage()
-        Me.gboxProductDtl = New System.Windows.Forms.GroupBox()
-        Me.chkDisabled = New System.Windows.Forms.CheckBox()
+        Me.tctrlStaffMst = New System.Windows.Forms.TabControl()
+        Me.TabStaffDtl = New System.Windows.Forms.TabPage()
+        Me.gboxStaffDtl = New System.Windows.Forms.GroupBox()
         Me.cmbxPostingAcGroup = New System.Windows.Forms.ComboBox()
         Me.lblPostingAcGroup = New System.Windows.Forms.Label()
         Me.txtUnitOfMeasure = New System.Windows.Forms.TextBox()
@@ -34,63 +33,51 @@ Partial Class frmMstStaff
         Me.cmbxCategory = New System.Windows.Forms.ComboBox()
         Me.lblCategory = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
-        Me.TabProductLst = New System.Windows.Forms.TabPage()
-        Me.dtgdProductLst = New System.Windows.Forms.DataGridView()
-        Me.tctrlProductMst.SuspendLayout()
-        Me.TabProductDtl.SuspendLayout()
-        Me.gboxProductDtl.SuspendLayout()
-        Me.TabProductLst.SuspendLayout()
-        CType(Me.dtgdProductLst, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabStaffLst = New System.Windows.Forms.TabPage()
+        Me.dtgdStaffLst = New System.Windows.Forms.DataGridView()
+        Me.tctrlStaffMst.SuspendLayout()
+        Me.TabStaffDtl.SuspendLayout()
+        Me.gboxStaffDtl.SuspendLayout()
+        Me.TabStaffLst.SuspendLayout()
+        CType(Me.dtgdStaffLst, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'tctrlProductMst
+        'tctrlStaffMst
         '
-        Me.tctrlProductMst.Controls.Add(Me.TabProductDtl)
-        Me.tctrlProductMst.Controls.Add(Me.TabProductLst)
-        Me.tctrlProductMst.Location = New System.Drawing.Point(12, 12)
-        Me.tctrlProductMst.Name = "tctrlProductMst"
-        Me.tctrlProductMst.SelectedIndex = 0
-        Me.tctrlProductMst.Size = New System.Drawing.Size(1210, 604)
-        Me.tctrlProductMst.TabIndex = 5
+        Me.tctrlStaffMst.Controls.Add(Me.TabStaffDtl)
+        Me.tctrlStaffMst.Controls.Add(Me.TabStaffLst)
+        Me.tctrlStaffMst.Location = New System.Drawing.Point(12, 12)
+        Me.tctrlStaffMst.Name = "tctrlStaffMst"
+        Me.tctrlStaffMst.SelectedIndex = 0
+        Me.tctrlStaffMst.Size = New System.Drawing.Size(1210, 604)
+        Me.tctrlStaffMst.TabIndex = 5
         '
-        'TabProductDtl
+        'TabStaffDtl
         '
-        Me.TabProductDtl.BackColor = System.Drawing.Color.LemonChiffon
-        Me.TabProductDtl.Controls.Add(Me.gboxProductDtl)
-        Me.TabProductDtl.Location = New System.Drawing.Point(4, 22)
-        Me.TabProductDtl.Name = "TabProductDtl"
-        Me.TabProductDtl.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabProductDtl.Size = New System.Drawing.Size(1202, 578)
-        Me.TabProductDtl.TabIndex = 0
-        Me.TabProductDtl.Text = "Add/Update/Delete"
+        Me.TabStaffDtl.BackColor = System.Drawing.Color.LemonChiffon
+        Me.TabStaffDtl.Controls.Add(Me.gboxStaffDtl)
+        Me.TabStaffDtl.Location = New System.Drawing.Point(4, 22)
+        Me.TabStaffDtl.Name = "TabStaffDtl"
+        Me.TabStaffDtl.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabStaffDtl.Size = New System.Drawing.Size(1202, 578)
+        Me.TabStaffDtl.TabIndex = 0
+        Me.TabStaffDtl.Text = "Add/Update/Delete"
         '
-        'gboxProductDtl
+        'gboxStaffDtl
         '
-        Me.gboxProductDtl.Controls.Add(Me.chkDisabled)
-        Me.gboxProductDtl.Controls.Add(Me.cmbxPostingAcGroup)
-        Me.gboxProductDtl.Controls.Add(Me.lblPostingAcGroup)
-        Me.gboxProductDtl.Controls.Add(Me.txtUnitOfMeasure)
-        Me.gboxProductDtl.Controls.Add(Me.lblUOM)
-        Me.gboxProductDtl.Controls.Add(Me.txtProductName)
-        Me.gboxProductDtl.Controls.Add(Me.cmbxCategory)
-        Me.gboxProductDtl.Controls.Add(Me.lblCategory)
-        Me.gboxProductDtl.Controls.Add(Me.lblName)
-        Me.gboxProductDtl.Location = New System.Drawing.Point(170, 79)
-        Me.gboxProductDtl.Name = "gboxProductDtl"
-        Me.gboxProductDtl.Size = New System.Drawing.Size(853, 427)
-        Me.gboxProductDtl.TabIndex = 30
-        Me.gboxProductDtl.TabStop = False
-        '
-        'chkDisabled
-        '
-        Me.chkDisabled.AutoSize = True
-        Me.chkDisabled.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.chkDisabled.Location = New System.Drawing.Point(728, 19)
-        Me.chkDisabled.Name = "chkDisabled"
-        Me.chkDisabled.Size = New System.Drawing.Size(101, 17)
-        Me.chkDisabled.TabIndex = 67
-        Me.chkDisabled.Text = "Disable Student"
-        Me.chkDisabled.UseVisualStyleBackColor = True
+        Me.gboxStaffDtl.Controls.Add(Me.cmbxPostingAcGroup)
+        Me.gboxStaffDtl.Controls.Add(Me.lblPostingAcGroup)
+        Me.gboxStaffDtl.Controls.Add(Me.txtUnitOfMeasure)
+        Me.gboxStaffDtl.Controls.Add(Me.lblUOM)
+        Me.gboxStaffDtl.Controls.Add(Me.txtProductName)
+        Me.gboxStaffDtl.Controls.Add(Me.cmbxCategory)
+        Me.gboxStaffDtl.Controls.Add(Me.lblCategory)
+        Me.gboxStaffDtl.Controls.Add(Me.lblName)
+        Me.gboxStaffDtl.Location = New System.Drawing.Point(170, 79)
+        Me.gboxStaffDtl.Name = "gboxStaffDtl"
+        Me.gboxStaffDtl.Size = New System.Drawing.Size(853, 427)
+        Me.gboxStaffDtl.TabIndex = 30
+        Me.gboxStaffDtl.TabStop = False
         '
         'cmbxPostingAcGroup
         '
@@ -168,46 +155,45 @@ Partial Class frmMstStaff
         Me.lblName.TabIndex = 54
         Me.lblName.Text = "Product Name :"
         '
-        'TabProductLst
+        'TabStaffLst
         '
-        Me.TabProductLst.BackColor = System.Drawing.Color.MistyRose
-        Me.TabProductLst.Controls.Add(Me.dtgdProductLst)
-        Me.TabProductLst.Location = New System.Drawing.Point(4, 22)
-        Me.TabProductLst.Name = "TabProductLst"
-        Me.TabProductLst.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabProductLst.Size = New System.Drawing.Size(1202, 578)
-        Me.TabProductLst.TabIndex = 1
-        Me.TabProductLst.Text = "List"
+        Me.TabStaffLst.BackColor = System.Drawing.Color.MistyRose
+        Me.TabStaffLst.Controls.Add(Me.dtgdStaffLst)
+        Me.TabStaffLst.Location = New System.Drawing.Point(4, 22)
+        Me.TabStaffLst.Name = "TabStaffLst"
+        Me.TabStaffLst.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabStaffLst.Size = New System.Drawing.Size(1202, 578)
+        Me.TabStaffLst.TabIndex = 1
+        Me.TabStaffLst.Text = "List"
         '
-        'dtgdProductLst
+        'dtgdStaffLst
         '
-        Me.dtgdProductLst.Location = New System.Drawing.Point(6, 7)
-        Me.dtgdProductLst.Name = "dtgdProductLst"
-        Me.dtgdProductLst.Size = New System.Drawing.Size(1190, 565)
-        Me.dtgdProductLst.TabIndex = 0
+        Me.dtgdStaffLst.Location = New System.Drawing.Point(6, 7)
+        Me.dtgdStaffLst.Name = "dtgdStaffLst"
+        Me.dtgdStaffLst.Size = New System.Drawing.Size(1190, 565)
+        Me.dtgdStaffLst.TabIndex = 0
         '
         'frmMstStaff
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1234, 628)
-        Me.Controls.Add(Me.tctrlProductMst)
+        Me.Controls.Add(Me.tctrlStaffMst)
         Me.Name = "frmMstStaff"
-        Me.Text = "frmMstStaff"
-        Me.tctrlProductMst.ResumeLayout(False)
-        Me.TabProductDtl.ResumeLayout(False)
-        Me.gboxProductDtl.ResumeLayout(False)
-        Me.gboxProductDtl.PerformLayout()
-        Me.TabProductLst.ResumeLayout(False)
-        CType(Me.dtgdProductLst, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "Staff"
+        Me.tctrlStaffMst.ResumeLayout(False)
+        Me.TabStaffDtl.ResumeLayout(False)
+        Me.gboxStaffDtl.ResumeLayout(False)
+        Me.gboxStaffDtl.PerformLayout()
+        Me.TabStaffLst.ResumeLayout(False)
+        CType(Me.dtgdStaffLst, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents tctrlProductMst As TabControl
-    Friend WithEvents TabProductDtl As TabPage
-    Friend WithEvents gboxProductDtl As GroupBox
-    Friend WithEvents chkDisabled As CheckBox
+    Friend WithEvents tctrlStaffMst As TabControl
+    Friend WithEvents TabStaffDtl As TabPage
+    Friend WithEvents gboxStaffDtl As GroupBox
     Friend WithEvents cmbxPostingAcGroup As ComboBox
     Friend WithEvents lblPostingAcGroup As Label
     Friend WithEvents txtUnitOfMeasure As TextBox
@@ -216,6 +202,6 @@ Partial Class frmMstStaff
     Friend WithEvents cmbxCategory As ComboBox
     Friend WithEvents lblCategory As Label
     Friend WithEvents lblName As Label
-    Friend WithEvents TabProductLst As TabPage
-    Friend WithEvents dtgdProductLst As DataGridView
+    Friend WithEvents TabStaffLst As TabPage
+    Friend WithEvents dtgdStaffLst As DataGridView
 End Class

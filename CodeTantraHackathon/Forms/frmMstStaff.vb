@@ -10,7 +10,7 @@
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         'SQLControl.GetUserRights(intMenuFormId, GlobalVariables.UserCode, True)
         enformMode = GlobalVariables.FormMode.fmView
-        gboxProductDtl.Enabled = False
+        gboxStaffDtl.Enabled = False
         pgState = "V"
         AddData()
     End Sub
@@ -20,8 +20,8 @@
             Exit Sub
         End If
         'SQLControl.GetUserRights(intMenuFormId, GlobalVariables.UserCode, False)
-        tctrlProductMst.SelectedTab = TabProductDtl
-        gboxProductDtl.Enabled = True
+        tctrlStaffMst.SelectedTab = TabStaffDtl
+        gboxStaffDtl.Enabled = True
         FillCombos()
         FillBlanks()
         Me.Refresh()
@@ -35,9 +35,9 @@
             Exit Sub
         End If
         If intKeyStaffId <> 0 Then
-            tctrlProductMst.SelectedTab = TabProductDtl
+            tctrlStaffMst.SelectedTab = TabStaffDtl
             'SQLControl.GetUserRights(intMenuFormId, GlobalVariables.UserCode, False)
-            gboxProductDtl.Enabled = True
+            gboxStaffDtl.Enabled = True
             pgState = "U"
             enformMode = GlobalVariables.FormMode.fmEditData
         Else
@@ -52,14 +52,14 @@
         End If
         'SQLControl.GetUserRights(intMenuFormId, GlobalVariables.UserCode, False)
         'gboxProductDtl.Enabled = True
-        If dtgdProductLst.CurrentRow Is Nothing Then
+        If dtgdStaffLst.CurrentRow Is Nothing Then
             MessageBox.Show("Please select a Product to Delete ...")
             Exit Sub
         End If
         pgState = "D"
         enformMode = GlobalVariables.FormMode.fmDeleteData
-        intKeyStaffId = dtgdProductLst.CurrentRow.Cells(0).Value
-        If InputBox("Do you want to Delete the Entry " & dtgdProductLst.CurrentRow.Cells(1).Value, "Delete Confirmation", "Yes") = "Yes" Then
+        intKeyStaffId = dtgdStaffLst.CurrentRow.Cells(0).Value
+        If InputBox("Do you want to Delete the Entry " & dtgdStaffLst.CurrentRow.Cells(1).Value, "Delete Confirmation", "Yes") = "Yes" Then
             '           MessageBox.Show("Deleting Entry ...")
             SaveData()
         Else
@@ -74,7 +74,6 @@
         cmbxPostingAcGroup.Text = ""
         cmbxPostingAcGroup.ResetText()
         cmbxCategory.ResetText()
-        chkDisabled.Checked = False
     End Sub
 
     Private Sub FillCombos()
@@ -105,15 +104,14 @@
             cmbxCategory.SelectedValue = cnGetData.DBDT.Rows(0)("ProdCategoryId")
             cmbxPostingAcGroup.SelectedText = cnGetData.DBDT.Rows(0)("ProdPostingAcGroup").ToString
             txtUnitOfMeasure.Text = cnGetData.DBDT.Rows(0)("ProdUOM").ToString
-            chkDisabled.Checked = cnGetData.DBDT.Rows(0)("ProdDisabled").ToString
         End If
         cnGetData = Nothing
     End Sub
 
     Public Sub CancelData()
         'SQLControl.GetUserRights(intMenuFormId, GlobalVariables.UserCode, True)
-        gboxProductDtl.Enabled = False
-        tctrlProductMst.SelectedTab = TabProductLst
+        gboxStaffDtl.Enabled = False
+        tctrlStaffMst.SelectedTab = TabStaffLst
         pgState = "V"
         enformMode = GlobalVariables.FormMode.fmView
     End Sub
@@ -159,7 +157,7 @@
             If pgState = "I" Then
                 AddData()
             ElseIf pgState = "U" Or pgState = "D" Then
-                tctrlProductMst.SelectedTab = TabProductLst
+                tctrlStaffMst.SelectedTab = TabStaffLst
             End If
         Catch ex As Exception
             cnData.Exception = "ExecQuery Error: " & vbNewLine & ex.Message
@@ -168,14 +166,14 @@
         End Try
     End Sub
 
-    Private Sub tctrlProductMst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tctrlProductMst.SelectedIndexChanged
-        If tctrlProductMst.SelectedTab.Name = "TabProductLst" Then
+    Private Sub tctrlProductMst_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tctrlStaffMst.SelectedIndexChanged
+        If tctrlStaffMst.SelectedTab.Name = "TabProductLst" Then
             cnData.ExecQuery("Select MstProduct.*,CategoryName,'  ' as Blank from MstProduct INNER JOIN MstCategory ON ProdCategoryId = CategoryId Order by ProductName;")
             If cnData.HasException = True Then Exit Sub
 
-            dtgdProductLst.DataSource = cnData.DBDT
+            dtgdStaffLst.DataSource = cnData.DBDT
 
-            With dtgdProductLst
+            With dtgdStaffLst
                 .DefaultCellStyle.BackColor = Color.AliceBlue
                 .AlternatingRowsDefaultCellStyle.BackColor = Color.LightSteelBlue
 
@@ -208,7 +206,7 @@
                 .ReadOnly = True
             End With
             '            cnData = Nothing
-        ElseIf tctrlProductMst.SelectedTab.Name = "TabProductDtl" Then
+        ElseIf tctrlStaffMst.SelectedTab.Name = "TabProductDtl" Then
             '            If dtgdProductLst.SelectedRows.Count <> 0 Then
             If intKeyStaffId <> 0 Then
                 FillDetails()
@@ -216,11 +214,11 @@
         End If
     End Sub
 
-    Private Sub dtgdProductLst_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtgdProductLst.CellMouseDoubleClick
+    Private Sub dtgdProductLst_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtgdStaffLst.CellMouseDoubleClick
         If e.RowIndex >= 0 And e.ColumnIndex > 0 Then
-            Dim intSelectedRow = dtgdProductLst.Rows(e.RowIndex)
-            intKeyStaffId = dtgdProductLst.Rows(e.RowIndex).Cells("ProductId").Value.ToString
-            tctrlProductMst.SelectedTab = TabProductDtl
+            Dim intSelectedRow = dtgdStaffLst.Rows(e.RowIndex)
+            intKeyStaffId = dtgdStaffLst.Rows(e.RowIndex).Cells("ProductId").Value.ToString
+            tctrlStaffMst.SelectedTab = TabStaffDtl
         End If
     End Sub
 
