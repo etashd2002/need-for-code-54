@@ -34,6 +34,9 @@ Partial Class frmTrnResultEntry
         Me.lblStaff = New System.Windows.Forms.Label()
         Me.cmbxStudent = New System.Windows.Forms.ComboBox()
         Me.dtgResultEntryDtl = New System.Windows.Forms.DataGridView()
+        Me.lblStudent = New System.Windows.Forms.Label()
+        Me.TabResultEntryLst = New System.Windows.Forms.TabPage()
+        Me.dtgdResultEntryLst = New System.Windows.Forms.DataGridView()
         Me.dtgPerformanceDtlId = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dtgSubject = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.dtgSubjectId = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -43,11 +46,6 @@ Partial Class frmTrnResultEntry
         Me.dtgRemarks = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dtgExamType = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dtgDateOfExam = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lblExamDate = New System.Windows.Forms.Label()
-        Me.dtpExamDate = New System.Windows.Forms.DateTimePicker()
-        Me.lblStudent = New System.Windows.Forms.Label()
-        Me.TabResultEntryLst = New System.Windows.Forms.TabPage()
-        Me.dtgdResultEntryLst = New System.Windows.Forms.DataGridView()
         Me.tctrlResultEntryTrn.SuspendLayout()
         Me.TabResultEntryDtl.SuspendLayout()
         Me.gboxResultEntryDtl.SuspendLayout()
@@ -83,8 +81,6 @@ Partial Class frmTrnResultEntry
         Me.gboxResultEntryDtl.Controls.Add(Me.lblStaff)
         Me.gboxResultEntryDtl.Controls.Add(Me.cmbxStudent)
         Me.gboxResultEntryDtl.Controls.Add(Me.dtgResultEntryDtl)
-        Me.gboxResultEntryDtl.Controls.Add(Me.lblExamDate)
-        Me.gboxResultEntryDtl.Controls.Add(Me.dtpExamDate)
         Me.gboxResultEntryDtl.Controls.Add(Me.lblStudent)
         Me.gboxResultEntryDtl.Location = New System.Drawing.Point(18, 16)
         Me.gboxResultEntryDtl.Name = "gboxResultEntryDtl"
@@ -140,6 +136,35 @@ Partial Class frmTrnResultEntry
         Me.dtgResultEntryDtl.Size = New System.Drawing.Size(1310, 356)
         Me.dtgResultEntryDtl.TabIndex = 6
         '
+        'lblStudent
+        '
+        Me.lblStudent.AutoSize = True
+        Me.lblStudent.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStudent.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblStudent.Location = New System.Drawing.Point(55, 15)
+        Me.lblStudent.Name = "lblStudent"
+        Me.lblStudent.Size = New System.Drawing.Size(68, 18)
+        Me.lblStudent.TabIndex = 46
+        Me.lblStudent.Text = "Student :"
+        '
+        'TabResultEntryLst
+        '
+        Me.TabResultEntryLst.BackColor = System.Drawing.Color.MistyRose
+        Me.TabResultEntryLst.Controls.Add(Me.dtgdResultEntryLst)
+        Me.TabResultEntryLst.Location = New System.Drawing.Point(4, 22)
+        Me.TabResultEntryLst.Name = "TabResultEntryLst"
+        Me.TabResultEntryLst.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabResultEntryLst.Size = New System.Drawing.Size(1359, 648)
+        Me.TabResultEntryLst.TabIndex = 1
+        Me.TabResultEntryLst.Text = "List"
+        '
+        'dtgdResultEntryLst
+        '
+        Me.dtgdResultEntryLst.Location = New System.Drawing.Point(6, 6)
+        Me.dtgdResultEntryLst.Name = "dtgdResultEntryLst"
+        Me.dtgdResultEntryLst.Size = New System.Drawing.Size(1347, 636)
+        Me.dtgdResultEntryLst.TabIndex = 0
+        '
         'dtgPerformanceDtlId
         '
         Me.dtgPerformanceDtlId.HeaderText = "PerformanceDtlId"
@@ -187,8 +212,6 @@ Partial Class frmTrnResultEntry
         '
         Me.dtgFeedback.HeaderText = "Feedback"
         Me.dtgFeedback.Name = "dtgFeedback"
-        Me.dtgFeedback.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtgFeedback.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'dtgRemarks
         '
@@ -214,55 +237,6 @@ Partial Class frmTrnResultEntry
         Me.dtgDateOfExam.HeaderText = "Date of Exam"
         Me.dtgDateOfExam.Name = "dtgDateOfExam"
         '
-        'lblExamDate
-        '
-        Me.lblExamDate.AutoSize = True
-        Me.lblExamDate.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblExamDate.Location = New System.Drawing.Point(31, 47)
-        Me.lblExamDate.Name = "lblExamDate"
-        Me.lblExamDate.Size = New System.Drawing.Size(91, 18)
-        Me.lblExamDate.TabIndex = 116
-        Me.lblExamDate.Text = "Exam Date :"
-        '
-        'dtpExamDate
-        '
-        Me.dtpExamDate.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpExamDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpExamDate.Location = New System.Drawing.Point(128, 44)
-        Me.dtpExamDate.Name = "dtpExamDate"
-        Me.dtpExamDate.ShowCheckBox = True
-        Me.dtpExamDate.Size = New System.Drawing.Size(154, 26)
-        Me.dtpExamDate.TabIndex = 4
-        '
-        'lblStudent
-        '
-        Me.lblStudent.AutoSize = True
-        Me.lblStudent.Font = New System.Drawing.Font("Tahoma", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStudent.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblStudent.Location = New System.Drawing.Point(55, 15)
-        Me.lblStudent.Name = "lblStudent"
-        Me.lblStudent.Size = New System.Drawing.Size(68, 18)
-        Me.lblStudent.TabIndex = 46
-        Me.lblStudent.Text = "Student :"
-        '
-        'TabResultEntryLst
-        '
-        Me.TabResultEntryLst.BackColor = System.Drawing.Color.MistyRose
-        Me.TabResultEntryLst.Controls.Add(Me.dtgdResultEntryLst)
-        Me.TabResultEntryLst.Location = New System.Drawing.Point(4, 22)
-        Me.TabResultEntryLst.Name = "TabResultEntryLst"
-        Me.TabResultEntryLst.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabResultEntryLst.Size = New System.Drawing.Size(1359, 648)
-        Me.TabResultEntryLst.TabIndex = 1
-        Me.TabResultEntryLst.Text = "List"
-        '
-        'dtgdResultEntryLst
-        '
-        Me.dtgdResultEntryLst.Location = New System.Drawing.Point(6, 6)
-        Me.dtgdResultEntryLst.Name = "dtgdResultEntryLst"
-        Me.dtgdResultEntryLst.Size = New System.Drawing.Size(1347, 636)
-        Me.dtgdResultEntryLst.TabIndex = 0
-        '
         'frmTrnResultEntry
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -287,8 +261,6 @@ Partial Class frmTrnResultEntry
     Friend WithEvents gboxResultEntryDtl As GroupBox
     Friend WithEvents cmbxStudent As ComboBox
     Friend WithEvents dtgResultEntryDtl As DataGridView
-    Friend WithEvents lblExamDate As Label
-    Friend WithEvents dtpExamDate As DateTimePicker
     Friend WithEvents lblStudent As Label
     Friend WithEvents TabResultEntryLst As TabPage
     Friend WithEvents dtgdResultEntryLst As DataGridView

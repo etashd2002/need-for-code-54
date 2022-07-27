@@ -33,7 +33,6 @@ Public Class frmTrnResultEntry
         pgState = "I"
         Me.Show()
         enFormMode = GlobalVariables.FormMode.fmAddData
-        dtpExamDate.Select()
     End Sub
 
     Public Sub EditData()
@@ -72,76 +71,77 @@ Public Class frmTrnResultEntry
     End Sub
 
     Public Sub SaveData()
-        enFormMode = GlobalVariables.FormMode.fmSaveData
-        Dim intSaveEntryNo As Integer
-        Dim intErrCode As Integer
-        Dim strErrMsg As String = ""
-        Dim lngRowCtr As Integer
-        Dim StrDtlSave As String
-        Dim dtEntry As Date
-        Dim dtExamDate As Date
-        Try
-            StrDtlSave = ""
-            lngRowCtr = 0
-            Do While lngRowCtr < dtgResultEntryDtl.Rows.Count
+        'enFormMode = GlobalVariables.FormMode.fmSaveData
+        'Dim intSaveEntryNo As Integer
+        'Dim intErrCode As Integer
+        'Dim strErrMsg As String = ""
+        'Dim lngRowCtr As Integer
+        'Dim StrDtlSave As String
+        'Dim dtEntry As Date
+        'Dim dtExamDate As Date
+        'Try
+        '    StrDtlSave = ""
+        '    lngRowCtr = 0
+        '    Do While lngRowCtr < dtgResultEntryDtl.Rows.Count
 
-                If String.IsNullOrEmpty(dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgSubjectId").Value) = False _
-                    And dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgSubjectId").Value IsNot Nothing Then
+        '        If String.IsNullOrEmpty(dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgSubjectId").Value) = False _
+        '            And dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgSubjectId").Value IsNot Nothing Then
 
-                    StrDtlSave = StrDtlSave + dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgPerformanceDtlId").Value + "!"
-                    StrDtlSave = StrDtlSave + (dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgSubjectId").Value).ToString + "!"
-                    StrDtlSave = StrDtlSave + dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgMarksScored").Value + "!"
-                    StrDtlSave = StrDtlSave + dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgTotalMarks").Value.ToString + "!"
-                    StrDtlSave = StrDtlSave + dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgFeedback").Value.ToString + "!"
-                    StrDtlSave = StrDtlSave + dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgRemarks").Value + "!"
-                    StrDtlSave = StrDtlSave + dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgExamType").Value + "!"
-                    If IsDate((dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgDateOfExam").Value).ToString) Then
-                        StrDtlSave = StrDtlSave + (dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgDateOfExam").Value).ToString + "!"
-                    End If
-                End If
-                lngRowCtr += 1
-            Loop
-            If IsDate(dtpExamDate.Text) Then
-                dtExamDate = dtpExamDate.Text
-            End If
+        '            StrDtlSave = StrDtlSave + dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgPerformanceDtlId").Value + "!"
+        '            StrDtlSave = StrDtlSave + (dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgSubjectId").Value).ToString + "!"
+        '            StrDtlSave = StrDtlSave + dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgMarksScored").Value + "!"
+        '            StrDtlSave = StrDtlSave + dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgTotalMarks").Value.ToString + "!"
+        '            StrDtlSave = StrDtlSave + dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgFeedback").Value.ToString + "!"
+        '            StrDtlSave = StrDtlSave + dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgRemarks").Value + "!"
+        '            StrDtlSave = StrDtlSave + dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgExamType").Value + "!"
+        '            If IsDate((dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgDateOfExam").Value).ToString) Then
+        '                StrDtlSave = StrDtlSave + (dtgResultEntryDtl.Rows(lngRowCtr).Cells("dtgDateOfExam").Value).ToString + "!"
+        '            End If
+        '        End If
+        '        lngRowCtr += 1
+        '    Loop
+        '    If IsDate(dtpExamDate.Text) Then
+        '        dtExamDate = dtpExamDate.Text
+        '    End If
 
-            cnData.AddParam("@in_SaveType", pgState)
-            If pgState = "U" Or pgState = "D" Then
-                cnData.AddParam("@in_StockId", intKeyResultId)
-            End If
-            If IsDate(dtpExamDate.Text) Then
-                cnData.AddParam("@in_ExamDate", dtExamDate)
-            End If
-            cnData.AddParam("@in_StudentId", cmbxStudent.SelectedValue)
-            cnData.AddParam("@in_StockDtl", StrDtlSave)
-            cnData.ExecProcedure("ResultEntry_AUD")
-            If cnData.HasException = True Then
-                MessageBox.Show("Entry did Not Save ...")
-                Exit Sub
-            End If
-            intSaveEntryNo = cnData.intCtrlEntryNo
-            intErrCode = cnData.intCtrlErrCode
-            strErrMsg = cnData.strCtrlErrMsg
-            If intErrCode < 0 Then
-                Exit Sub
-                MessageBox.Show("Entry did Not Saved ..." & vbCrLf & strErrMsg)
-            Else
-            End If
+        '    cnData.AddParam("@in_SaveType", pgState)
+        '    If pgState = "U" Or pgState = "D" Then
+        '        cnData.AddParam("@in_StockId", intKeyResultId)
+        '    End If
+        '    If IsDate(dtpExamDate.Text) Then
+        '        cnData.AddParam("@in_ExamDate", dtExamDate)
+        '    End If
+        '    cnData.AddParam("@in_StudentId", cmbxStudent.SelectedValue)
+        '    cnData.AddParam("@in_StockDtl", StrDtlSave)
+        '    cnData.ExecProcedure("ResultEntry_AUD")
+        '    If cnData.HasException = True Then
+        '        MessageBox.Show("Entry did Not Save ...")
+        '        Exit Sub
+        '    End If
+        '    intSaveEntryNo = cnData.intCtrlEntryNo
+        '    intErrCode = cnData.intCtrlErrCode
+        '    strErrMsg = cnData.strCtrlErrMsg
+        '    If intErrCode < 0 Then
+        '        Exit Sub
+        '        MessageBox.Show("Entry did Not Saved ..." & vbCrLf & strErrMsg)
+        '    Else
+        '    End If
 
-            FillBlanks()
-            If pgState = "I" Then
-                AddData()
-            ElseIf pgState = "U" Or pgState = "D" Then
-                pgState = "V"
-                tctrlResultEntryTrn.SelectedTab = TabResultEntryLst
-                gboxResultEntryDtl.Enabled = False
-            End If
-        Catch ex As Exception
-            cnData.Exception = "ExecQuery Error:   " & vbNewLine & ex.Message
-            MessageBox.Show("Error in Saving Data " & ex.Message)
-            '        Finally
-            ' CLOSE CONNECTION
-        End Try
+        '    FillBlanks()
+        '    If pgState = "I" Then
+        '        AddData()
+        '    ElseIf pgState = "U" Or pgState = "D" Then
+        '        pgState = "V"
+        '        tctrlResultEntryTrn.SelectedTab = TabResultEntryLst
+        '        gboxResultEntryDtl.Enabled = False
+        '    End If
+        'Catch ex As Exception
+        '    cnData.Exception = "ExecQuery Error:   " & vbNewLine & ex.Message
+        '    MessageBox.Show("Error in Saving Data " & ex.Message)
+        '    '        Finally
+        '    ' CLOSE CONNECTION
+        'End Try
+        AddData()
     End Sub
 
     Public Sub FillCombos()
@@ -186,7 +186,6 @@ Public Class frmTrnResultEntry
         cmbxStudent.SelectedIndex = -1
         dtgResultEntryDtl.Rows.Clear()
         dtgResultEntryDtl.Rows.Add()
-        setDateTimePickerBlank(dtpExamDate)
     End Sub
 
     Private Sub FillDetails()
@@ -335,14 +334,6 @@ Public Class frmTrnResultEntry
         dateTimePicker.Format = DateTimePickerFormat.Custom
     End Sub
 
-    Private Sub dtpExamDate_ValueChanged(sender As Object, e As EventArgs) Handles dtpExamDate.ValueChanged
-        If dtpExamDate.Checked = CheckState.Unchecked Then
-            setDateTimePickerBlank(dtpExamDate)
-        Else
-            dtpExamDate.CustomFormat = "dd/MM/yyyy"
-        End If
-    End Sub
-
     Private Sub dtgdResultEntryLst_CellMouseDoubleClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles dtgdResultEntryLst.CellMouseDoubleClick
         If e.RowIndex >= 0 And e.ColumnIndex > 0 Then
             Dim intSelectedRow = dtgdResultEntryLst.Rows(e.RowIndex)
@@ -424,7 +415,7 @@ Public Class frmTrnResultEntry
         SendKeys.Send("%{DOWN}")
     End Sub
 
-    Private Sub dtpBillDate_GotFocus(sender As Object, e As EventArgs) Handles dtpExamDate.GotFocus
+    Private Sub dtpBillDate_GotFocus(sender As Object, e As EventArgs)
         SendKeys.Send("%{DOWN}")
     End Sub
 
